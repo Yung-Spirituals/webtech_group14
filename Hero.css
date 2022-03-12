@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto&family=Ubuntu:wght@300;500&  display=swap');
+
+
+/*********************************
+          General styles
+**********************************/
+
+
+/*
+Resetting the global styles
+ */
+html{
+    font-size: 62.5%;
+    font-family:"Lato", sans-serif;
+    color: #010315;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Links */
+a:link{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+    text-align: center;
+}
+
+/************************************
+         Colors, fonts
+************************************/
+
+footer{
+    background-color: #151515;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 3em;
+}
+
+header{
+    color: black;
+    font-size: 1.8rem;
+}
+
+#useless li{
+    color: white;
+    font-weight: bold;
+}
+
+#useless a:visited{
+    color: white;
+}
+
+.useful li:nth-child(1){
+    font-weight: bold;
+}
+
+.useful a:visited{
+    color: rgba(201, 201, 201, 0.94);
+
+}
+
+/************************************
+              Icons
+************************************/
+
+.socials{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+/************************************
+              Layout
+************************************/
+
+footer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 25em;
+}
+
+#useless li{
+    line-height: 5em;
+}
