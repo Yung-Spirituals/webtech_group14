@@ -28,7 +28,6 @@ a:link{
 
 li{
     list-style-type: none;
-    text-align: center;
 }
 
 /************************************
@@ -56,13 +55,20 @@ header{
     color: white;
 }
 
+#useless a:link{
+    color: white;
+}
+
 .useful li:nth-child(1){
     font-weight: bold;
 }
 
 .useful a:visited{
     color: rgba(201, 201, 201, 0.94);
+}
 
+.useful a:link{
+    color: rgba(201, 201, 201, 0.94);
 }
 
 /************************************
@@ -81,11 +87,17 @@ header{
 footer {
     display: flex;
     flex-flow: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
     min-height: 25em;
+    padding-top: 4em;
 }
 
-#useless li{
+#useless ul{
     line-height: 5em;
+    margin-top: -0.99em;
+}
+
+.useful img{
+    margin-right: 2em;
 }
