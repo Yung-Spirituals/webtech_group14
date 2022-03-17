@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto&family=Ubuntu:wght@300;500&  display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Roboto&family=Ubuntu:wght@300;500&display=swap');
 
 /*********************************
           General styles
@@ -34,6 +33,39 @@ li{
          Colors, fonts
 ************************************/
 
+/*
+Placeholder bar
+ */
+.placeHolderBar{
+    background-color: #151515;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+
+/*
+Header
+ */
+header{
+    color: black;
+    font-size: 1.8rem;
+}
+
+nav a:link{
+    color: black;
+}
+
+nav a:visited{
+    color: black;
+}
+
+/*
+Footer
+ */
+
 footer{
     background-color: #151515;
     color: white;
@@ -41,34 +73,62 @@ footer{
     line-height: 3em;
 }
 
-header{
-    color: black;
-    font-size: 1.8rem;
-}
-
-#useless li{
+#extras li{
     color: white;
     font-weight: bold;
 }
 
-#useless a:visited{
+#extras a:visited{
     color: white;
 }
 
-#useless a:link{
+#extras a:link{
     color: white;
 }
 
-.useful li:nth-child(1){
+.useful-information li:nth-child(1){
     font-weight: bold;
 }
 
-.useful a:visited{
+.useful-information a:visited{
     color: rgba(201, 201, 201, 0.94);
 }
 
-.useful a:link{
+.useful-information a:link{
     color: rgba(201, 201, 201, 0.94);
+}
+
+
+
+/************************************
+              Buttons
+************************************/
+.cta{
+    background-color: #101010;
+    border-color: rgb(0, 0, 0);
+    border-width: 0.2em;
+    border-style: solid ;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: 10px 30px;
+}
+
+.cta:hover{
+    opacity: 0.95;
+}
+
+/************************************
+              Searchbar
+************************************/
+
+input{
+    height: 2rem;
+    width: 15rem;
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 /************************************
@@ -84,6 +144,74 @@ header{
               Layout
 ************************************/
 
+/*
+Header layout
+ */
+header{
+    display: flex;
+    padding-left: 9rem;
+    align-content: center;
+    border-bottom: 0.1em #b0b0b0 solid;
+}
+
+
+/*
+Navigation layout
+*/
+nav{
+    font-size: 2rem;
+    padding-left: 10rem;
+}
+
+nav ul{
+    display: flex;
+    gap: 9rem;
+    padding-left: 18rem;
+}
+
+#heroSearchbar{
+    padding-left: 20rem;
+    display: flex;
+    align-content: center;
+}
+
+#heroSearchbar img{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+}
+
+#logo-image{
+    height: 8rem;
+}
+
+#logo-text{
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#logoNavigation{
+    display: flex;
+    padding-left: 1rem;
+}
+
+#logoNavigation img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 3rem;
+}
+
+
+/*
+Footer layout
+ */
 footer {
     display: flex;
     flex-flow: row;
@@ -93,11 +221,11 @@ footer {
     padding-top: 4em;
 }
 
-#useless ul{
+#extras ul{
     line-height: 5em;
-    margin-top: -0.99em;
+    margin-top: -1.03em;
 }
 
-.useful img{
+.useful-information img{
     margin-right: 2em;
 }
