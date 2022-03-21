@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Roboto&family=Ubuntu:wght@300;500&display=swap');
+
+/*********************************
+          General styles
+**********************************/
+
+
+/*
+Resetting the global styles
+ */
+html{
+    font-size: 62.5%;
+    font-family:"Lato", sans-serif;
+    color: #010315;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Links */
+a:link{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+/*
+Placeholder bar
+ */
+.placeHolderBar{
+    background-color: #151515;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+
+/*
+Header
+ */
+header{
+    color: black;
+    font-size: 1.8rem;
+}
+
+nav a:link{
+    color: black;
+}
+
+nav a:visited{
+    color: black;
+}
+
+/*
+Footer
+ */
+
+footer{
+    background-color: #151515;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 3em;
+}
+
+#extras li{
+    color: white;
+    font-weight: bold;
+}
+
+#extras a:visited{
+    color: white;
+}
+
+#extras a:link{
+    color: white;
+}
+
+.useful-information li:nth-child(1){
+    font-weight: bold;
+}
+
+.useful-information a:visited{
+    color: rgba(201, 201, 201, 0.94);
+}
+
+.useful-information a:link{
+    color: rgba(201, 201, 201, 0.94);
+}
+/************************************
+              Searchbar
+************************************/
+
+input{
+    height: 2rem;
+    width: 15rem;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+/************************************
+              Icons
+************************************/
+
+.socials{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+/************************************
+              Layout
+************************************/
+
+/*
+Header layout
+ */
+header{
+    display: flex;
+    padding-left: 9rem;
+    align-content: center;
+    border-bottom: 0.1em #b0b0b0 solid;
+}
+
+
+/*
+Navigation layout
+*/
+nav{
+    font-size: 2rem;
+    padding-left: 10rem;
+}
+
+nav ul{
+    display: flex;
+    gap: 9rem;
+    padding-left: 18rem;
+}
+
+#heroSearchbar{
+    padding-left: 20rem;
+    display: flex;
+    align-content: center;
+}
+
+#heroSearchbar img{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+}
+
+#logo-image{
+    height: 8rem;
+}
+
+#logo-text{
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#logoNavigation{
+    display: flex;
+    padding-left: 1rem;
+}
+
+#logoNavigation img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 3rem;
+}
+
+
+/*
+Footer layout
+ */
+footer {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    min-height: 25em;
+    padding-top: 4em;
+}
+
+#extras ul{
+    line-height: 5em;
+    margin-top: -1.03em;
+}
+
+.useful-information img{
+    margin-right: 2em;
+}
+
+/************************************
+              Buttons
+************************************/
+.cta{
+    background-color: #101010;
+    border-color: rgb(0, 0, 0);
+    border-width: 0.2em;
+    border-style: solid ;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: 10px 30px;
+}
+
+.cta:hover{
+    opacity: 0.95;
+}
+
+/*
+Unique
+ */
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#filterAndProducts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+#filters{
+    padding-left: 1vw;
+    padding-bottom: 4vw;
+    font-size: 5rem;
+}
+
+#filterOptions li{
+    text-decoration: underline;
+    padding-left: 2vw;
+    padding-bottom: 0.8rem;
+    font-size: 4.2rem;
+    font-weight: 370;
+    color: #4d4d4d;
+    text-decoration-color: #1a1a1a;
+}
+
+#productCardContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2% 40vw 2% 2%;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #b0b0b0;
+    max-width: 30vw;
+    max-height: 100%;
+}
+
+#overview{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 10px;
+    border-bottom: 0.1em #b0b0b0 solid;
+}
+
+#categoryInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    font-size: 2rem;
+    padding: 1vw 7vw;
+}
+
+#productCategory{
+    display: flex;
+    font-size: 3rem;
+    padding: 1vw 1vw;
+}
+#filtering{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    padding-right: 2vw;
+    padding-top: 2vw;
+    padding-left: 1vw;
+    height: 100rem;
+}
+
+@media screen and (max-width: 90rem){
+
+    #filterAndProducts{
+        justify-content: space-between;
+    }
+
+    #productCardContainer{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: auto;
+        margin-left: 20vw;
+        margin-top: 10vw;
+        padding: 1vw;
+    }
+
+    #filtering{
+        width: 30rem;
+    }
+}
