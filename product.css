@@ -8,8 +8,15 @@ html{
 }
 ul{
     list-style-type: none;
+    padding: 0;
+}
+a:link{
+    text-decoration: none;
 }
 
+li{
+    list-style-type: none;
+}
 p{
     font-size: 1.3rem;
 }
@@ -55,9 +62,6 @@ h2{
     text-decoration: none;
     color: black;
 }
-.footer{
-    background: black;
-}
 .logo{
     display: flex;
     align-items: center;
@@ -73,6 +77,10 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.searchbar{
+    display:flex;
+    outline: none;
 }
 .content{
     display: grid;
@@ -231,4 +239,56 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.useful-information img{
+    margin-right: 2em;
+}
+.socials{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+.useful-information li:nth-child(1){
+    font-weight: bold;
+}
+
+.useful-information a:visited{
+    color: rgba(201, 201, 201, 0.94);
+}
+
+.useful-information a:link{
+    color: rgba(201, 201, 201, 0.94);
+}
+#extras li{
+    color: white;
+    font-weight: bold;
+}
+
+#extras a:visited{
+    color: white;
+}
+
+#extras a:link{
+    color: white;
+}
+.footer{
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-flow: row;
+    justify-content: space-evenly;
+    min-height: 25em;
+    padding-top: 4em;
+    line-height: 3em;
+}
+.useful-information{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+#extras{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
