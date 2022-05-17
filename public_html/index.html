@@ -2,104 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale =1">
-    <title>Hiking Website Group14</title>
-    <link rel="stylesheet" href="hero.css"/>
-
-
-    <!-- CHANGE THE NAMES OF THE DIFFERENT IDS, THIS IS NOT DONE-->
-
-
+    <title>XXL</title>
+    <link rel="icon" type="image/x-icon" href="/public_html/images/xxl.ico">
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
+
 <body>
-
-
-<!-- Black bar on top, not sure what to do with it yet-->
-
-<div class="placeHolderBar">
-    <p>Free shipping for orders over 400$</p>
+<div id="topbar">
+    <p>Fite me</p>
 </div>
-
-<!-- Header and navigation bar-->
 <header>
-    <div id="logo">
-        <img id="logo-image" src="images/leeezard.png" alt="Company logo"/>
-        <p id="logo-text">
-            <span>XXS</span>
-        </p>
+    <div class="header-container">
+        <img src="/public_html/images/leeezard.png" alt="logo" id="logo">
+        <span>XXL</span>
     </div>
     <nav>
         <ul>
-            <li><a href="productselection.html">Man</a></li>
-            <li><a href="productselection.html">Woman</a></li>
-            <li><a href="productselection.html">Unisex</a></li>
-            <li><a href="productselection.html">Dog</a></li>
-            <li><a href="productselection.html">Equipment</a></li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Dogs</li>
+            <li>Unisex</li>
+            <li>Utilities</li>
         </ul>
     </nav>
-
-    <div class="searchAndIcons">
-        <div class="searchbar">
-            <label>
-                <input type="text" placeholder="Search">
-            </label>
-            <img src="icons/search-outline.svg" alt="search icon">
-        </div>
-
-        <div class="navigationIcons">
-            <embed src="icons/heart-outline.svg" alt="heart wishlist" />
-            <embed src="icons/person-outline.svg" alt="user profile" />
-            <embed src="icons/cart-outline.svg" alt="shopping cart" />
-        </div>
+    <div class="logoNavigation">
+        <span class="material-icons md">
+            search
+        </span>
+        <span class="material-icons md">
+            shopping_cart
+        </span>
+        <span class="material-icons md">
+            person_outline
+        </span>
+        <span class="material-icons md">
+            favorite_border
+        </span>
     </div>
 </header>
-
-<!-- Hero section etc...-->
 <main>
-    <section id="hero-section">
-        <img src="images/tom-wheatley-5ijn5ZRRKlI-unsplash-herosection.jpg" alt="hero-image">
-        <div>
+    <section class="hero-section">
+        <div id="hero-image-text">
             <h1>SIZE DOESN'T MATTER</h1>
-            <button class="cta">TO SHOP</button>
+            <p>Large or small, beginner or pro, we have you covered! ;)</p>
+            <button class="button" type="button">TO SHOP</button>
+        </div>
+        <img src="/public_html/images/hero/hero-section.jpg" alt="woman hiking" id="hero-image">
+    </section>
+    <section id="product-gallery">
+        <div id="bestsellers" class="information">
+            <h2>
+                Bestsellers
+            </h2>
+        </div>
+        <div class="product-gallery-card" id="gallery-a">
+            <img src="/public_html/images/bird/bird-blue.jpg" alt="bird">
+            <div class="product-gallery-card-text">
+                <h4>Blue bird</h4>
+                <p>
+                <span class="price">
+                    999.99$
+                </span>
+                </p>
+                <button class="button" type="button">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product-gallery-card" id="gallery-b">
+            <img src="/public_html/images/bird/bird-purple.jpg" alt="bird">
+            <div class="product-gallery-card-text">
+                <h4>Purple bird</h4>
+                <p>
+                <span class="price">
+                    999.99$
+                </span>
+                </p>
+                <button class="button" type="button">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product-gallery-card" id="gallery-c">
+            <img src="/public_html/images/bird/bird-yellow.jpg" alt="bird">
+            <div class="product-gallery-card-text">
+                <h4>Yellow bird</h4>
+                <p>
+                <span class="price">
+                999.99$
+                </span>
+                </p>
+                <button class="button" type="button">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product-gallery-card" id="gallery-d">
+            <img src="/public_html/images/bird/bird-green.jpg" alt="bird">
+            <div class="product-gallery-card-text">
+                <h4>Green bird</h4>
+                <p>
+                <span class="price">
+                    999.99$
+                </span>
+                </p>
+                <button class="button" type="button">ADD TO CART</button>
+            </div>
+        </div>
+        <div class="product-gallery-card" id="gallery-e">
+            <img src="/public_html/images/bird/bird-pink.jpg" alt="bird">
+            <div class="product-gallery-card-text">
+                <h4>Pink bird</h4>
+                <p>
+                <span class="price">
+                    999.99$
+                </span>
+                </p>
+                <button class="button" type="button">ADD TO CART</button>
+            </div>
         </div>
     </section>
-
-    <section id="selection-container">
-        <div class="selection-images">
-            <img src="https://picsum.photos/500/500?random=1" alt="placeholder">
-            <div>
-                <h2>Lorem ipsum dolor sit amet consectetur,<br>aaaaaa</h2>
-                <button class="cta">TO SHOP</button>
-            </div>
+    <section id="about-us">
+        <div class="information">
+            <h2>ABOUT US</h2>
+            <p>Young or old, we help you reach the peaks of your lifetime. With XXS your weekend is a success. Our team
+                consists of professional climbers as well as weekend hikers.</p>
         </div>
-        <div class="selection-images">
-            <img src="https://picsum.photos/500/500?random=2" alt="placeholder">
-            <div>
-                <h2>Lorem ipsum dolor sit amet consectetur,<br>aaaaaa</h2>
-                <button class="cta">TO SHOP</button>
+        <img src="/public_html/images/staff/staff.jpg" alt="staff-member" id="staff-member">
+    </section>
+    <section id="product-cards">
+        <div id="grid-utility" class="card">
+            <div class="product-text" id="utility-text">
+                <h3>Quality equipment</h3>
+                <p>For all your hiking needs</p>
+                <button class="button" type="button">EXPLORE</button>
             </div>
+            <img src="/public_html/images/utility/bottle.jpg" alt="water bottle" class="product-images" id="showcase-utility">
         </div>
-        <div class="selection-images">
-            <img src="https://picsum.photos/500/500?random=3" alt="placeholder">
-            <div>
-                <h2>Lorem ipsum dolor sit amet consectetur,<br>aaaaaa</h2>
-                <button class="cta">TO SHOP</button>
+        <div id="grid-clothes" class="card">
+            <div class="product-text" id="clothes-text">
+                <h3>Challenge any hike</h3>
+                <p>Clothing for all weathers</p>
+                <button class="button" type="button">EXPLORE</button>
             </div>
+            <img src="/public_html/images/utility/joanna-nix-walkup-Osq7UAVxIOI-unsplash.jpg" alt="hiking boots"
+                 class="product-images"
+                 id="showcase-clothes">
+        </div>
+        <div id="grid-dogs" class="card">
+            <div class="product-text" id="dogs-text">
+                <h3>Hiking buddy</h3>
+                <p>Comfortable outfits for dogs</p>
+                <button class="button" type="button">EXPLORE</button>
+            </div>
+            <img src="/public_html/images/dogs/pexels-vova-krasilnikov-4317151.jpg" alt="dog" class="product-images"
+                 id="showcase-dogs">
         </div>
     </section>
-
-    <section id="single-container">
-        <img src="images/cyprien-delaporte-cITgqiIsg3c-unsplash.jpg" alt="placeholder">
-        <div>
-            <h2>Lorem ipsum dolor sit amet consectetur,<br>aaaaaa</h2>
-            <button class="cta">TO SHOP</button>
+    <section id="products-and-services" class="information">
+        <div id="premium">
+        <span class="material-icons ss">
+            workspace_premium
+        </span>
+            <h2>Only the best for our customers</h2>
+            <p>We sell only premium equipment from brands such as <br>Bergans, North Face, Devold and Mammut.</p>
+            <button class="button" type="button">BROWSE PARTNERS</button>
+        </div>
+        <div id="tested">
+        <span class="material-icons ss">
+            auto_awesome
+        </span>
+            <h2>We did it so you don't have to</h2>
+            <p>All our employees are hiking enthusiasts,<br>and we have tested all we sell in the shop</p>
+            <button class="button" type="button">EXPLORE SHOP</button>
+        </div>
+    </section>
+    <section id="testimonials">
+        <div id="testimonials-one" class="testimonial">
+            <img src="/public_html/images/testimonials/pexels-josh-willink-1157395%20(1).jpg" alt="testimonial-1">
+            <blockquote>
+                Hiking is a good way to use weekends together with your family. XXS is our go-to
+                place for the latest hiking gear.
+            </blockquote>
+            <h4>Anton Berg-Hansen</h4>
+            <p>Avid hiker</p>
+        </div>
+        <div id="testimonials-two" class="testimonial">
+            <img src="/public_html/images/testimonials/pexels-italo-melo-2379004%20(1).jpg" alt="testimonial-2">
+            <blockquote>
+                We are a small IT company, full of geeks. I had difficulty getting the geeks out of their
+                chairs. XXS suggested the latest water bottles as a Christmas gift for all employees. I was skeptical at
+                first, but now I have difficulty getting them back indoors.
+            </blockquote>
+            <h4>Chuck Venstre</h4>
+            <p>CEO of IT company</p>
+        </div>
+        <div id="testimonials-three" class="testimonial">
+            <img src="/public_html/images/testimonials/pexels-rachel-claire-4992604%20(1).jpg" alt="testimonial-3">
+            <blockquote>
+                Got a matching sweater for my human and myself. We are out in the mountains every Sunday
+                since.
+            </blockquote>
+            <h4>Golden retriever</h4>
+            <p>#1 Goodest boy</p>
         </div>
     </section>
 </main>
-
-<!-- Footer-->
-<footer class="footer">
+<footer>
     <div id="extras">
         <ul>
             <li><a href="#">FIND A STORE</a></li>
@@ -120,11 +227,9 @@
     <div class="useful-information">
         <ul>
             <li>ABOUT US</li>
-            <li><a href="#">ORDER STATUS</a></li>
-            <li><a href="#">SHIPPING AND DELIVERY</a></li>
-            <li><a href="#">RETURNS</a></li>
-            <li><a href="#">PAYMENT OPTIONS</a></li>
-            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Sustainability</a></li>
         </ul>
     </div>
     <div class="useful-information">
@@ -139,6 +244,5 @@
         </ul>
     </div>
 </footer>
-
 </body>
 </html>
