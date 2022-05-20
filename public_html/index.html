@@ -3,47 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>XXL</title>
-    <link rel="icon" type="image/x-icon" href="/public_html/images/xxl.ico">
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" type="image/x-icon" href="/public_html/src/images/xxl.ico">
+    <link rel="stylesheet" href="src/index.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="src/header.js"></script>
+    <script src="src/footer.js"></script>
 </head>
 
 <body>
-<div id="topbar">
-    <p>Fite me</p>
-</div>
-<header>
-    <div class="header-container">
-        <img src="/public_html/images/leeezard.png" alt="logo" id="logo">
-        <span>XXL</span>
-    </div>
-    <nav>
-        <ul>
-            <li>Men</li>
-            <li>Women</li>
-            <li>Dogs</li>
-            <li>Unisex</li>
-            <li>Utilities</li>
-        </ul>
-    </nav>
-    <div class="logoNavigation">
-        <span class="material-icons md">
-            search
-        </span>
-        <span class="material-icons md">
-            shopping_cart
-        </span>
-        <span class="material-icons md">
-            person_outline
-        </span>
-        <span class="material-icons md">
-            favorite_border
-        </span>
-    </div>
-</header>
+<header-component></header-component>
 <main>
     <section class="hero-section">
         <div id="hero-image-text">
@@ -51,7 +21,7 @@
             <p>Large or small, beginner or pro, we have you covered! ;)</p>
             <button class="button" type="button">TO SHOP</button>
         </div>
-        <img src="/public_html/images/hero/hero-section.jpg" alt="woman hiking" id="hero-image">
+        <img src="/public_html/src/images/hero/hero-section.jpg" alt="woman hiking" id="hero-image">
     </section>
     <section id="product-gallery">
         <div id="bestsellers" class="information">
@@ -60,7 +30,7 @@
             </h2>
         </div>
         <div class="product-gallery-card" id="gallery-a">
-            <img src="/public_html/images/bird/bird-blue.jpg" alt="bird">
+            <img src="/public_html/src/images/bird/bird-blue.jpg" alt="bird">
             <div class="product-gallery-card-text">
                 <h4>Blue bird</h4>
                 <p>
@@ -72,7 +42,7 @@
             </div>
         </div>
         <div class="product-gallery-card" id="gallery-b">
-            <img src="/public_html/images/bird/bird-purple.jpg" alt="bird">
+            <img src="/public_html/src/images/bird/bird-purple.jpg" alt="bird">
             <div class="product-gallery-card-text">
                 <h4>Purple bird</h4>
                 <p>
@@ -84,7 +54,7 @@
             </div>
         </div>
         <div class="product-gallery-card" id="gallery-c">
-            <img src="/public_html/images/bird/bird-yellow.jpg" alt="bird">
+            <img src="/public_html/src/images/bird/bird-yellow.jpg" alt="bird">
             <div class="product-gallery-card-text">
                 <h4>Yellow bird</h4>
                 <p>
@@ -96,7 +66,7 @@
             </div>
         </div>
         <div class="product-gallery-card" id="gallery-d">
-            <img src="/public_html/images/bird/bird-green.jpg" alt="bird">
+            <img src="/public_html/src/images/bird/bird-green.jpg" alt="bird">
             <div class="product-gallery-card-text">
                 <h4>Green bird</h4>
                 <p>
@@ -108,7 +78,7 @@
             </div>
         </div>
         <div class="product-gallery-card" id="gallery-e">
-            <img src="/public_html/images/bird/bird-pink.jpg" alt="bird">
+            <img src="/public_html/src/images/bird/bird-pink.jpg" alt="bird">
             <div class="product-gallery-card-text">
                 <h4>Pink bird</h4>
                 <p>
@@ -126,7 +96,7 @@
             <p>Young or old, we help you reach the peaks of your lifetime. With XXS your weekend is a success. Our team
                 consists of professional climbers as well as weekend hikers.</p>
         </div>
-        <img src="/public_html/images/staff/staff.jpg" alt="staff-member" id="staff-member">
+        <img src="/public_html/src/images/staff/staff.jpg" alt="staff-member" id="staff-member">
     </section>
     <section id="product-cards">
         <div id="grid-utility" class="card">
@@ -135,7 +105,7 @@
                 <p>For all your hiking needs</p>
                 <button class="button" type="button">EXPLORE</button>
             </div>
-            <img src="/public_html/images/utility/bottle.jpg" alt="water bottle" class="product-images" id="showcase-utility">
+            <img src="/public_html/src/images/utility/bottle.jpg" alt="water bottle" class="product-images" id="showcase-utility">
         </div>
         <div id="grid-clothes" class="card">
             <div class="product-text" id="clothes-text">
@@ -143,7 +113,7 @@
                 <p>Clothing for all weathers</p>
                 <button class="button" type="button">EXPLORE</button>
             </div>
-            <img src="/public_html/images/utility/joanna-nix-walkup-Osq7UAVxIOI-unsplash.jpg" alt="hiking boots"
+            <img src="/public_html/src/images/utility/joanna-nix-walkup-Osq7UAVxIOI-unsplash.jpg" alt="hiking boots"
                  class="product-images"
                  id="showcase-clothes">
         </div>
@@ -153,7 +123,7 @@
                 <p>Comfortable outfits for dogs</p>
                 <button class="button" type="button">EXPLORE</button>
             </div>
-            <img src="/public_html/images/dogs/pexels-vova-krasilnikov-4317151.jpg" alt="dog" class="product-images"
+            <img src="/public_html/src/images/dogs/pexels-vova-krasilnikov-4317151.jpg" alt="dog" class="product-images"
                  id="showcase-dogs">
         </div>
     </section>
@@ -177,7 +147,7 @@
     </section>
     <section id="testimonials">
         <div id="testimonials-one" class="testimonial">
-            <img src="/public_html/images/testimonials/pexels-josh-willink-1157395%20(1).jpg" alt="testimonial-1">
+            <img src="/public_html/src/images/testimonials/pexels-josh-willink-1157395%20(1).jpg" alt="testimonial-1">
             <blockquote>
                 Hiking is a good way to use weekends together with your family. XXS is our go-to
                 place for the latest hiking gear.
@@ -186,7 +156,7 @@
             <p>Avid hiker</p>
         </div>
         <div id="testimonials-two" class="testimonial">
-            <img src="/public_html/images/testimonials/pexels-italo-melo-2379004%20(1).jpg" alt="testimonial-2">
+            <img src="/public_html/src/images/testimonials/pexels-italo-melo-2379004%20(1).jpg" alt="testimonial-2">
             <blockquote>
                 We are a small IT company, full of geeks. I had difficulty getting the geeks out of their
                 chairs. XXS suggested the latest water bottles as a Christmas gift for all employees. I was skeptical at
@@ -196,7 +166,7 @@
             <p>CEO of IT company</p>
         </div>
         <div id="testimonials-three" class="testimonial">
-            <img src="/public_html/images/testimonials/pexels-rachel-claire-4992604%20(1).jpg" alt="testimonial-3">
+            <img src="/public_html/src/images/testimonials/pexels-rachel-claire-4992604%20(1).jpg" alt="testimonial-3">
             <blockquote>
                 Got a matching sweater for my human and myself. We are out in the mountains every Sunday
                 since.
@@ -206,48 +176,6 @@
         </div>
     </section>
 </main>
-<footer>
-    <div class="useful-information" id="extras-list">
-        <ul>
-            <li>DISCOVER</li>
-            <li><a href="#">Find a store</a></li>
-            <li><a href="#">Sign up for emails</a></li>
-            <li><a href="#">Feedback</a></li>
-        </ul>
-    </div>
-    <div class="useful-information" id="get-help-list">
-        <ul>
-            <li>GET HELP</li>
-            <li><a href="#">Order status</a></li>
-            <li><a href="#">Shipping and delivery</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Payment options</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-    </div>
-    <div class="useful-information" id="about-us-list">
-        <ul>
-            <li>ABOUT US</li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Sustainability</a></li>
-        </ul>
-    </div>
-    <div class="useful-information" id="socials-list" >
-        <ul>
-            <li>SOCIALS</li>
-            <li>Find us on:</li>
-            <li>
-                <img src="/public_html/icons/facebook.png" alt="facebook">
-            </li>
-            <li>
-                <img src="/public_html/icons/instagram.png" alt="instagram">
-            </li>
-            <li>
-                <img src="/public_html/icons/twitter.png" alt="twitter">
-            </li>
-        </ul>
-    </div>
-</footer>
+<footer-component></footer-component>
 </body>
 </html>
