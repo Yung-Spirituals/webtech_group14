@@ -523,13 +523,23 @@ footer li:not(:first-child) {
 @media screen and (max-width: 84em) {
 
 }
+
+
+
+
+/*CSS FOR PRODUCT PAGE BELOW*/
+
+
+
+
+
 .content{
     display: grid;
     grid-template-areas: 
     "title     title title"
     "thumbnails image details";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-columns: 1fr 2.789fr 2fr;
 }
 .productTitle{
     grid-area: title;
@@ -549,6 +559,7 @@ footer li:not(:first-child) {
 .thumbnails > img {
     width: 100%;
     margin-bottom: 2rem;
+    border-radius: 2rem;
 }
 .image{
     grid-area: image;
@@ -556,6 +567,7 @@ footer li:not(:first-child) {
 }
 .image > img{
     width: 100%;
+    border-radius: 2rem;
 }
 .details{
     grid-area: details;
@@ -569,6 +581,7 @@ footer li:not(:first-child) {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size:1.3vw;
 }
 .price{
     font-size: 1.4rem;
@@ -589,12 +602,19 @@ footer li:not(:first-child) {
 }
 .orangeSelect{
     color:orange;
+    cursor: pointer;
+}
+.orangeSelect:hover{
+    color:orange;
+    cursor: pointer;
 }
 .greenSelect{
     color:green;
+    cursor: pointer;
 }
 .purpleSelect{
     color:purple;
+    cursor: pointer;
 }
 .sizes{
     display: flex;
@@ -603,7 +623,36 @@ footer li:not(:first-child) {
     font-weight: bold;
     font-size: 1.5rem;
     gap:0.8rem;
-
+}
+#XS{
+    cursor: pointer;
+}
+#XS:hover{
+    color:#55d6aa;
+}
+#S{
+    cursor: pointer;
+}
+#S:hover{
+    color:#55d6aa;
+}
+#M{
+    cursor: pointer;
+}
+#M:hover{
+    color:#55d6aa;
+}
+#L{
+    cursor: pointer;
+}
+#L:hover{
+    color:#55d6aa;
+}
+#XL{
+    cursor: pointer;
+}
+#XL:hover{
+    color:#55d6aa;
 }
 .shortInfo{
     display: flex;
@@ -622,27 +671,39 @@ footer li:not(:first-child) {
 .BuyButtonArea{
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
+    margin-bottom:2rem;
 }
 .BuyButton{
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width:14rem;
-    height:3.5rem;
-    color:white;
-    background-color: black;
-    border: 0.1em #b0b0b0 solid;
-    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border: 0.2rem solid #55d6aa;
+    border-radius: 3rem;
+    background-color: #55d6aa;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    font-weight: 800;
+    box-shadow: inset 0 0 0 0 #222222;
+    -webkit-box-shadow: inset 0 0 0 0 #222222;
+    transition-duration: 0.6s;
 }
 .BuyButton:hover{
-    opacity: 50%;
+    background-color: #222222;
+    color: #55d6aa;
+    box-shadow: inset 15rem 0 0 0 #222222;
+    -webkit-box-shadow: inset 15rem 0 0 0 #222222;
+    cursor: pointer;
 }
 .FavoriteArea{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 2rem;
+    margin-bottom:2rem;
 }
 .Favorite{
     display: flex;
@@ -651,8 +712,9 @@ footer li:not(:first-child) {
     width: 3rem;
     height: 3rem;
 }
-.Favorite:hover{
+.FavoriteArea:hover{
     opacity:50%;
+    cursor: pointer;
 }
 .detailedDescription{
     display: flex;
