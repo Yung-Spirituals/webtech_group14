@@ -20,11 +20,9 @@ import { useRouter } from "vue-router";
 import { useProductStore } from "@/stores/product";
 const router = useRouter();
 function openProduct(id) {
-  console.log(router);
   router.push(`/product/${id}`);
 }
 const store = useProductStore();
-console.log(store.products);
 </script>
 <style>
 .products-view {

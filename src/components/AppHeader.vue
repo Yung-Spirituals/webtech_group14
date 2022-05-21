@@ -33,7 +33,6 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {
-  console.log(route.name);
   return route.name !== "product";
 });
 </script>

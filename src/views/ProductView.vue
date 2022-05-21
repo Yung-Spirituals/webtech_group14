@@ -65,13 +65,11 @@ import ProductContent from "@/components/ProductContent.vue";
 import GlobalStyles from "@/components/globalStyles.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
-console.log(route.params.id);
 import { useProductStore } from "@/stores/product";
 const store = useProductStore();
 const currentProduct = store.products.find((product) => {
   return product.id === route.params.id;
 });
-console.log(currentProduct);
 </script>
 
 
