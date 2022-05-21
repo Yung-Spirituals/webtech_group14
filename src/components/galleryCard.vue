@@ -1,32 +1,29 @@
 <template>
-  <div id="bestsellers" class="information">
-    <h2>
-      <slot name="header"></slot>
-    </h2>
-  </div>
   <div class="product-gallery-card">
     <img :src="image" />
     <div class="product-gallery-card-text">
       <h4>
-        <slot name="smallHeader"></slot>
+        <slot name="heading"></slot>
       </h4>
       <p>
         <span class="price">
           <slot name="price"></slot>
         </span>
       </p>
-      <Button />
+      <AppButton />
     </div>
   </div>
 </template>
 
 <script>
-import Button from '@/components/button.vue'
-export default {
-  name: "galleryCard",
-  components: {Button}
-}
 
+import AppButton from "@/AppButton.vue";
+
+export default {
+  components: {
+    AppButton
+  }
+}
 
 </script>
 

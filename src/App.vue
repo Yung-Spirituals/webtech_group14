@@ -5,13 +5,10 @@
       <div id="hero-image-text">
         <h1>SIZE DOESN'T MATTER</h1>
         <p>Large or small, beginner or pro, we have you covered! ;)</p>
-        <Button>
-          <template #buttonText>TO SHOP</template>
-        </Button>
+        <AppButton text="hello"/>
       </div>
       <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image">
     </section>
-    <GalleryCard></GalleryCard>
   </main>
   <Footer></Footer>
 </template>
@@ -20,10 +17,15 @@
 import GlobalStyles from "@/components/globalStyles.vue";
 import Header from "@/components/header.vue";
 import Footer from "@/components/footer.vue";
-import Button from '@/components/button.vue'
-import GalleryCard from "@/components/galleryCard.vue";
+import AppButton from "@/components/AppButton.vue";
+
 export default {
-  components: {GlobalStyles, Header, Footer, Button, GalleryCard}
+  components: {
+    AppButton,
+    GlobalStyles,
+    Header,
+    Footer
+  }
 }
 
 </script>

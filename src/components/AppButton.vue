@@ -1,13 +1,22 @@
 <template>
-  <button class="button" type="button">
-    <slot name="buttonText"></slot>
+  <button @click = "onClick" class="button">
+    <slot>{{ text }}</slot>
   </button>
 </template>
 
 <script>
 
 export default {
-  name: "Button"
+  props: {
+    text: {
+      required: true,
+      type: String
+    },
+    onClick: {
+      type: Function,
+      required: true
+    }
+  }
 }
 </script>
 
