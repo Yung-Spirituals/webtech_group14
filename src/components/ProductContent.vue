@@ -1,8 +1,3 @@
-<script>
-export default {
-  name: "ProductContent",
-};
-</script>
 <template>
   <div class="content">
     <div class="productTitle">MAN / SWEATERS AND JACKETS / BANANA PEEL</div>
@@ -65,5 +60,8 @@ export default {
     </div>
   </div>
 </template>
+
+<script setup>
+</script>
 <style scoped src="../productStyle.css" type>
 </style>
