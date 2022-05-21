@@ -3,6 +3,7 @@ import Header from "@/components/header.vue";
 import Footer from "@/components/footer.vue";
 import AppButton from "@/components/appbutton.vue";
 import ProductContent from "@/components/ProductContent.vue";
+import GlobalStyles from "@/components/globalStyles.vue";
 
 export default {
   components: {
