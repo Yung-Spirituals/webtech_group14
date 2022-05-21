@@ -2,7 +2,7 @@
   <h1>Products</h1>
   <div class="products-view">
     <div
-      v-for="product in products"
+      v-for="product in store.products"
       :key="product.id"
       class="product"
       @click="openProduct(product.id)"
@@ -17,43 +17,12 @@
 </template>
 <script setup>
 import { useRouter } from "vue-router";
+import { useProductStore } from "@/stores/product";
 const router = useRouter();
 function openProduct(id) {
-  console.log(router);
   router.push(`/product/${id}`);
 }
-const products = [
-  {
-    id: "1",
-    name: "Hiking boots",
-    price: 2400,
-    image: "https://source.unsplash.com/nj0a29qb_jo/300x300",
-  },
-  {
-    id: "2",
-    name: "Winter sweater",
-    price: 800,
-    image: "https://source.unsplash.com/mU88MlEFcoU/300x300",
-  },
-  {
-    id: "3",
-    name: "Winter hat",
-    price: 200,
-    image: "https://source.unsplash.com/amTyFteGaRg/300x300",
-  },
-  {
-    id: "4",
-    name: "Water bottle",
-    price: 120,
-    image: "https://source.unsplash.com/reEySFadyJQ/300x300",
-  },
-  {
-    id: "5",
-    name: "Clothes set for dogs ",
-    price: 6670,
-    image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
-  },
-];
+const store = useProductStore();
 </script>
 <style>
 .products-view {

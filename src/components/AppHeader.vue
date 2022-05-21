@@ -9,7 +9,7 @@
     </div>
     <nav>
       <ul>
-        <li v-for="route in routes" :key="route.path">
+        <li v-for="route in filteredRoutes" :key="route.path">
           <RouterLink :to="route.path">{{ route.name }}</RouterLink>
         </li>
         <!--         <li><RouterLink to="/Product">Product</RouterLink></li>
@@ -32,6 +32,9 @@
 import { useRouter } from "vue-router";
 const router = useRouter();
 const routes = router.getRoutes();
+const filteredRoutes = routes.filter((route) => {
+  return route.name !== "product";
+});
 </script>
 
 <style scoped>
@@ -93,6 +96,7 @@ div a:active {
   grid-column-end: 5;
   cursor: pointer;
 }
+
 /* #topbar {
   background-color: #222222;
   color: #ffffff;
