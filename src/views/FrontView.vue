@@ -4,7 +4,7 @@
       <div id="hero-image-text">
         <h1>SIZE DOESN'T MATTER</h1>
         <p>Large or small, beginner or pro, we have you covered! ;)</p>
-        <AppButton text="hello"/>
+        <AppButton text="TO SHOP"/>
       </div>
       <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image">
     </section>
@@ -18,7 +18,7 @@ import AppButton from "@/components/AppButton.vue";
 export default {
   components: {
     AppButton,
-    GlobalStyles,
+    GlobalStyles
   }
 }
 </script>
