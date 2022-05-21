@@ -1,5 +1,4 @@
 <template>
-  <Header></Header>
   <main>
     <section class="hero-section">
       <div id="hero-image-text">
@@ -10,22 +9,17 @@
       <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image">
     </section>
   </main>
-  <Footer></Footer>
 </template>
 
 <script>
 import GlobalStyles from "@/components/globalStyles.vue";
-import Header from "@/components/header.vue";
-import Footer from "@/components/footer.vue";
 import AppButton from "@/components/AppButton.vue";
 
 export default {
   components: {
     AppButton,
     GlobalStyles,
-    Header,
-    Footer
-  },
+  }
 }
 </script>
 

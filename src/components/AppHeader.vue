@@ -9,8 +9,8 @@
     </div>
     <nav>
       <ul>
-        <li><RouterLink to="/men">Men</RouterLink></li>
-        <li><RouterLink to="/women">Women</RouterLink></li>
+        <li><RouterLink to="/Product">Product</RouterLink></li>
+        <li><RouterLink to="/">Women</RouterLink></li>
         <li><RouterLink to="/unisex">Unisex</RouterLink></li>
         <li><RouterLink to="/dogs">Dogs</RouterLink></li>
         <li><RouterLink to="/utilities">Utilities</RouterLink></li>
@@ -31,9 +31,6 @@
 </template>
 
 <script>
-export default {
-  name: "Header"
-}
 </script>
 
 <style scoped>
