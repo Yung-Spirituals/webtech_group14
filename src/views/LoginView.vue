@@ -1,4 +1,3 @@
-
 <template>
   <div id="login">
     <img src="@/assets/leeezard.png" alt="logo"/>

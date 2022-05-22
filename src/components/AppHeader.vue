@@ -3,10 +3,10 @@
     <p>Fite me</p>
   </div>
   <header>
-    <div class="header-container">
+    <router-link to="/"><div class="header-container">
       <img src="@/assets/leeezard.png" alt="logo" id="logo" />
       <span>XXS</span>
-    </div>
+    </div></router-link>
     <nav>
       <ul>
         <li v-for="route in filteredRoutes" :key="route.path">
@@ -17,17 +17,18 @@
     <div class="headerNavigation">
       <span class="material-icons md"> search </span>
       <span class="material-icons md"> shopping_cart </span>
-      <span class="material-icons md"> person_outline </span>
+      <router-link to="/login"><span class="material-icons md"> person_outline </span></router-link>
     </div>
   </header>
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {
-  return route.name !== "product";
+  return route.name !== "product" && route.name !== "login";
 });
 </script>
 
