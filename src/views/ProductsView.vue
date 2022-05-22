@@ -7,7 +7,7 @@
       class="product"
       @click="openProduct(product.id)"
     >
-      <img :src="product.image" />
+      <img :src="product.image" width="300" height="300" />
       <div class="product-content">
         <h2>{{ product.name }}</h2>
         <p>{{ product.price }}kr</p>
@@ -23,6 +23,7 @@ function openProduct(id) {
   router.push(`/product/${id}`);
 }
 const store = useProductStore();
+/* store.getProducts(); */
 </script>
 <style>
 .products-view {
