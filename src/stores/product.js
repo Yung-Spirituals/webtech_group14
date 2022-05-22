@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-
+import axios from 'axios'
 export const useProductStore = defineStore({
   id: 'product',
   state: () => ({
@@ -39,12 +39,25 @@ export const useProductStore = defineStore({
         image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
         description: "For hot dogs only"
       },
+      {
+        id: "6",
+        name: "Clothes set for hogs ",
+        price: 500,
+        image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
+        description: "For hot hogs only"
+      },
     ]
   }),
   getters: {
 
   },
+
   actions: {
 
+    async getProducts() {
+      const response = await axios.get('https://fakestoreapi.com/products')
+      this.products = response.data
+    }
   }
+
 })
