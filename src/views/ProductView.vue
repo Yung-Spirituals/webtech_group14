@@ -45,7 +45,7 @@
       </div>
       <div class="BuyOrFavorite">
         <div class="BuyButtonArea">
-          <div class="BuyButton">ADD TO CART</div>
+          <div class="BuyButton" @click="addToCart">ADD TO CART</div>
         </div>
         <div class="FavoriteArea">
           <span class="material-icons"> favorite_border </span>
@@ -63,13 +63,18 @@
 import AppButton from "@/components/appbutton.vue";
 import ProductContent from "@/components/ProductContent.vue";
 import GlobalStyles from "@/components/globalStyles.vue";
+import { useCartStore } from "@/stores/cart";
 import { useRoute } from "vue-router";
-const route = useRoute();
 import { useProductStore } from "@/stores/product";
+const route = useRoute();
+const cartStore = useCartStore();
 const store = useProductStore();
 const currentProduct = store.products.find((product) => {
   return product.id === route.params.id;
 });
+function addToCart() {
+  cartStore.addToCart(currentProduct);
+}
 </script>
 
 

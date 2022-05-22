@@ -16,7 +16,9 @@
     </nav>
     <div class="headerNavigation">
       <span class="material-icons md"> search </span>
-      <span class="material-icons md"> shopping_cart </span>
+      <span class="material-icons md" @click="goToShoppingCart">
+        shopping_cart
+      </span>
       <span class="material-icons md"> person_outline </span>
     </div>
   </header>
@@ -27,8 +29,12 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {
-  return route.name !== "product";
+  const hiddenRoutes = ["product", "shopping-cart"];
+  return !hiddenRoutes.includes(route.name);
 });
+function goToShoppingCart() {
+  router.push(`/shopping-cart/`);
+}
 </script>
 
 <style scoped>

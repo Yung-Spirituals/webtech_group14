@@ -25,7 +25,7 @@ function openProduct(id) {
 const store = useProductStore();
 /* store.getProducts(); */
 </script>
-<style>
+<style scoped>
 .products-view {
   width: calc(100vw - 20rem);
   margin: 5rem 10rem;

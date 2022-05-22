@@ -8,14 +8,14 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/FrontView.vue')
     },
-   /* {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },*/
+    /* {
+       path: '/about',
+       name: 'about',
+       // route level code-splitting
+       // this generates a separate chunk (About.[hash].js) for this route
+       // which is lazy-loaded when the route is visited.
+       component: () => import('../views/AboutView.vue')
+     },*/
     {
       path: '/Products',
       name: 'Products',
@@ -30,6 +30,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/shopping-cart',
+      name: 'shopping-cart',
+      component: () => import('../views/ShoppingCartView.vue')
     }
   ]
 })
