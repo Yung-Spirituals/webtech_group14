@@ -1,4 +1,3 @@
-
 <template>
   <div id="login">
     <img src="@/assets/leeezard.png" alt="logo"/>
@@ -22,6 +21,12 @@
 </template>
 
 <script>
+import GlobalStyles from '@/components/GlobalStyles.vue'
+export default {
+  components: {
+    GlobalStyles
+  }
+}
 </script>
 
 

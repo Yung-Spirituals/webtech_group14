@@ -2,12 +2,12 @@
   <h1>Products</h1>
   <div class="products-view">
     <div
-      v-for="product in store.products"
+      v-for="product in products"
       :key="product.id"
       class="product"
       @click="openProduct(product.id)"
     >
-      <img :src="product.image" width="300" height="300" />
+      <img :src="product.image_path" width="300" height="300" />
       <div class="product-content">
         <h2>{{ product.name }}</h2>
         <p>{{ product.price }}kr</p>
@@ -16,6 +16,7 @@
   </div>
 </template>
 <script setup>
+import { storeToRefs } from 'pinia'
 import { useRouter } from "vue-router";
 import { useProductStore } from "@/stores/product";
 const router = useRouter();
@@ -23,8 +24,19 @@ function openProduct(id) {
   router.push(`/product/${id}`);
 }
 const store = useProductStore();
-/* store.getProducts(); */
+store.getProducts();
+const { products } = storeToRefs(store)
 </script>
+
+<script>
+import GlobalStyles from '@/components/GlobalStyles.vue'
+export default {
+  components: {
+    GlobalStyles
+  }
+}
+</script>
+
 <style>
 .products-view {
   width: calc(100vw - 20rem);
