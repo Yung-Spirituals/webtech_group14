@@ -7,12 +7,13 @@
       <h2 id="priceTitle">Price</h2>
       <h2 id="totalTitle">Total</h2>
       <h2 id="deleteTitle">Delete</h2>
+
       <div v-for="product in cartStore.cart" :key="product.id" class="product">
-        <img :src="product.image" width="30" height="30" />
-        <div class="product-content">
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.price }}kr</p>
-        </div>
+        <p id="productColumn">{{ product.name }}</p>
+        <p id="amountColumn">{{}}</p>
+        <p id="priceColumn">{{ product.price }}</p>
+        <p id="totalColumn">{{ product.total }}</p>
+        <p id="deleteColumn">delete</p>
       </div>
     </div>
   </div>
@@ -22,6 +23,11 @@
 import GlobalStyles from "@/components/globalStyles.vue";
 import { useCartStore } from "@/stores/cart";
 const cartStore = useCartStore();
+const productAmount = 0;
+
+function incrementAmount() {
+  productAmount++;
+}
 </script>
 
 <style scoped>
@@ -38,8 +44,9 @@ const cartStore = useCartStore();
   display: grid;
   grid-template-areas:
     "productTitle amountTitle priceTitle totalTitle deleteTitle"
-    "product      amount      price       total      delete";
-  grid-template-columns: 60px 1fr;
+    "product      amount      price       total      delete"
+    "checkout     checkout    checkout    checkout   checkout";
+  grid-template-columns: 100px 1fr 100px;
   grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
 }
 #productTitle {
@@ -56,6 +63,22 @@ const cartStore = useCartStore();
 }
 #deleteTitle {
   grid-area: deleteTitle;
+}
+
+#productColumn {
+  grid-area: product;
+}
+#amountColumn {
+  grid-area: amount;
+}
+#priceColumn {
+  grid-area: price;
+}
+#totalColumn {
+  grid-area: total;
+}
+#deleteColumn {
+  grid-area: delete;
 }
 
 .table {
