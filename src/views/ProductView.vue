@@ -60,9 +60,6 @@
 </template>
 
 <script setup>
-import AppButton from "@/components/appbutton.vue";
-import ProductContent from "@/components/ProductContent.vue";
-import GlobalStyles from "@/components/GlobalStyles.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 import { useProductStore } from "@/stores/product";

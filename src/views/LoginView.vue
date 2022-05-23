@@ -21,12 +21,7 @@
 </template>
 
 <script>
-import GlobalStyles from '@/components/GlobalStyles.vue'
-export default {
-  components: {
-    GlobalStyles
-  }
-}
+
 </script>
 
 
