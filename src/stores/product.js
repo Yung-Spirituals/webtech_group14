@@ -76,6 +76,13 @@ export const useProductStore = defineStore({
         description: "For hot hogs only",
         type: "dogs"
       },
+      {
+        id: "7",
+        name: "Clothes set for hogsssszzz ",
+        price: 500,
+        image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
+        description: "For hot hogs only"
+      }
     ]
   }),
   getters: {

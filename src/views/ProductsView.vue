@@ -64,7 +64,6 @@ const { products } = storeToRefs(store)
   grid-template-columns: 20rem 1fr;
   justify-items: center;
 }
-
 .products-view {
   grid-area: 1/2/2/3;
   width: calc(100vw - 30rem);
@@ -82,6 +81,7 @@ const { products } = storeToRefs(store)
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   transition: transform 0.2s ease;
+  background: white;
 }
 .product:hover {
   cursor: pointer;
