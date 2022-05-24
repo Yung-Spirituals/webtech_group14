@@ -46,6 +46,13 @@ export const useProductStore = defineStore({
         image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
         description: "For hot hogs only"
       },
+      {
+        id: "7",
+        name: "Clothes set for hogsssszzz ",
+        price: 500,
+        image: "https://source.unsplash.com/qy0BHykaq0E/300x300",
+        description: "For hot hogs only"
+      }
     ]
   }),
   getters: {
@@ -54,7 +61,7 @@ export const useProductStore = defineStore({
 
   actions: {
     async getProducts() {
-      const response = await axios.get('https://fakestoreapi.com/products')
+      const response = await axios.get('http://localhost:8080/api/get-products')
       this.products = response.data
     }
   }

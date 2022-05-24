@@ -47,9 +47,6 @@
         <div class="BuyButtonArea">
           <div class="BuyButton" @click="addToCart">ADD TO CART</div>
         </div>
-        <div class="FavoriteArea">
-          <span class="material-icons"> favorite_border </span>
-        </div>
       </div>
       <h2 class="detailedDescription">DESCRIPTION</h2>
       <h2 class="productDetails">DETAILS</h2>

@@ -26,6 +26,8 @@ const store = useProductStore();
 /* store.getProducts(); */
 </script>
 <style scoped>
+.container {
+}
 .products-view {
   width: calc(100vw - 20rem);
   margin: 5rem 10rem;
@@ -42,6 +44,7 @@ const store = useProductStore();
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   transition: transform 0.2s ease;
+  background: white;
 }
 .product:hover {
   cursor: pointer;

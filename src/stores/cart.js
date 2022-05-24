@@ -22,14 +22,33 @@ export const useCartStore = defineStore({
 export const useCartStore = defineStore({
     id: 'cart',
     state: () => ({
-        cart: []
+        cart: [],
+        uniqueProducts: []
     }),
-    getters: {
 
+    getters: {
+        UniqueProducts: (state) => state.uniqueProducts,
     },
     actions: {
         addToCart(product) {
             this.cart.push(product);
+            if (productAmount[cart[i].id]) {
+                productAmount[cart[i].id]++;
+            } else {
+                productAmount[cart[i].id] = 1;
+            }
+            if (!uniqueProductIDs.includes(cart[i].id)) {
+                uniqueProductIDs.push(cart[i].id);
+                uniqueProducts.push(cart[i]);
+            }
+        },
+
+        removeFromCart(id) {
+            const index = this.cart.findIndex((product) => {
+                return product.id === id;
+            });
+            this.cart.splice(index, 1);
+            console.log(this.cart);
         }
     }
 })
