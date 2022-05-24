@@ -12,13 +12,11 @@
 </template>
 
 <script>
-import GlobalStyles from "@/components/globalStyles.vue";
 import AppButton from "@/components/AppButton.vue";
 
 export default {
   components: {
-    AppButton,
-    GlobalStyles
+    AppButton
   }
 }
 </script>
