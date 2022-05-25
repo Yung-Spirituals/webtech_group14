@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div v-if="currentProduct" class="content">
     <div class="productTitle">MAN / SWEATERS AND JACKETS / BANANA PEEL</div>
     <div class="thumbnails">
       <img
@@ -60,12 +60,18 @@
 import { useCartStore } from "@/stores/cart";
 import { useRoute } from "vue-router";
 import { useProductStore } from "@/stores/product";
+import { storeToRefs } from "pinia";
+import { computed } from "vue";
 const route = useRoute();
 const cartStore = useCartStore();
 const store = useProductStore();
-const currentProduct = store.products.find((product) => {
-  console.log(product.image_path);
-  return product.id === route.params.id;
+const { products } = storeToRefs(store);
+store.getProducts();
+
+const currentProduct = computed(() => {
+  return products.value.find((product) => {
+    return product.id + "" === route.params.id;
+  });
 });
 function addToCart() {
   cartStore.addToCart(currentProduct);
