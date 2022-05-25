@@ -32,6 +32,7 @@ export const useCartStore = defineStore({
     actions: {
         addToCart(product) {
             this.cart.push(product);
+            /*
             if (productAmount[cart[i].id]) {
                 productAmount[cart[i].id]++;
             } else {
@@ -41,6 +42,7 @@ export const useCartStore = defineStore({
                 uniqueProductIDs.push(cart[i].id);
                 uniqueProducts.push(cart[i]);
             }
+            */
         },
 
         removeFromCart(id) {

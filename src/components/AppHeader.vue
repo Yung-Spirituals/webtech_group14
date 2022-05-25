@@ -3,10 +3,12 @@
     <p>Fite me</p>
   </div>
   <header>
-    <router-link to="/"><div class="header-container">
-      <img src="@/assets/leeezard.png" alt="logo" id="logo" />
-      <span>XXS</span>
-    </div></router-link>
+    <router-link to="/"
+      ><div class="header-container">
+        <img src="@/assets/leeezard.png" alt="logo" id="logo" />
+        <span>XXS</span>
+      </div></router-link
+    >
     <nav>
       <ul>
         <li v-for="route in filteredRoutes" :key="route.path">
@@ -19,7 +21,9 @@
       <span class="material-icons md" @click="goToShoppingCart">
         shopping_cart
       </span>
-      <router-link to="/login"><span class="material-icons md"> person_outline </span></router-link>
+      <router-link to="/login"
+        ><span class="material-icons md"> person_outline </span></router-link
+      >
     </div>
   </header>
 </template>
