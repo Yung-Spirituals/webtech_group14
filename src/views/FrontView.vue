@@ -4,9 +4,9 @@
       <div id="hero-image-text">
         <h1>SIZE DOESN'T MATTER</h1>
         <p>Large or small, beginner or pro, we have you covered! ;)</p>
-        <AppButton text="TO SHOP"/>
+        <AppButton text="TO SHOP" />
       </div>
-      <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image">
+      <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image" />
     </section>
   </main>
 </template>
@@ -16,13 +16,13 @@ import AppButton from "@/components/AppButton.vue";
 
 export default {
   components: {
-    AppButton
-  }
-}
+    AppButton,
+  },
+};
 </script>
 
 <style scoped>
-.hero-section{
+.hero-section {
   display: grid;
   overflow: hidden;
   grid-template-rows: 20vh 1fr 20vh;
@@ -31,11 +31,11 @@ export default {
   padding-bottom: 6vh;
 }
 
-#hero-image-text{
+#hero-image-text {
   grid-area: 2 / 2 / 3 / 3;
 }
 
-#hero-image-text h1{
+#hero-image-text h1 {
   font-size: 4vw;
   font-weight: 800;
 }
@@ -46,7 +46,7 @@ export default {
   margin-bottom: 2vh;
 }
 
-#hero-image{
+#hero-image {
   grid-area: 1 / 1 / 4 / 4;
   z-index: -1;
   max-height: 87vh;
@@ -54,5 +54,4 @@ export default {
   object-fit: cover;
   object-position: 50% 10%;
 }
-
 </style>

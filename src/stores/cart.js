@@ -23,7 +23,9 @@ export const useCartStore = defineStore({
     id: 'cart',
     state: () => ({
         cart: [],
+        /*
         uniqueProducts: []
+        */
     }),
 
     getters: {

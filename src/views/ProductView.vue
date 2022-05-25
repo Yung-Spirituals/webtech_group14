@@ -13,7 +13,7 @@
       />
     </div>
     <div class="image">
-      <img :src="currentProduct.image" />
+      <img :src="currentProduct.image_path" />
     </div>
     <div class="details">
       <h1 class="productName">{{ currentProduct.name }}</h1>
@@ -57,8 +57,6 @@
 </template>
 
 <script setup>
-import AppButton from "@/components/appbutton.vue";
-import GlobalStyles from "@/components/globalStyles.vue";
 import { useCartStore } from "@/stores/cart";
 import { useRoute } from "vue-router";
 import { useProductStore } from "@/stores/product";
@@ -66,6 +64,7 @@ const route = useRoute();
 const cartStore = useCartStore();
 const store = useProductStore();
 const currentProduct = store.products.find((product) => {
+  console.log(product.image_path);
   return product.id === route.params.id;
 });
 function addToCart() {

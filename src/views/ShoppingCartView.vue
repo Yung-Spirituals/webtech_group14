@@ -1,10 +1,4 @@
 <template>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-  </head>
   <div class="content">
     <h1 class="title">Shopping Cart</h1>
     {{ cart }}
@@ -53,7 +47,6 @@
 </template>
 
 <script setup>
-import GlobalStyles from "@/components/globalStyles.vue";
 import { useCartStore } from "@/stores/cart";
 const cartStore = useCartStore();
 const cart = cartStore.cart;
