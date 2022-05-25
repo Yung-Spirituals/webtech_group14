@@ -1,5 +1,5 @@
 <template>
-  <button @click = "onClick" class="button">
+  <button class="button">
     <slot>{{ text }}</slot>
   </button>
 </template>
@@ -12,10 +12,6 @@ export default {
       required: true,
       type: String
     },
-    onClick: {
-      type: Function,
-      required: true
-    }
   }
 }
 </script>
