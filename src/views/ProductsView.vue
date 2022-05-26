@@ -58,7 +58,7 @@ const { products } = storeToRefs(store)
 <script>
 </script>
 
-<style>
+<style scoped>
 .container{
   display: grid;
   grid-template-columns: 20rem 1fr;

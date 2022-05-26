@@ -8,20 +8,51 @@
       </div>
       <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image" />
     </section>
+    <div id="background">
+      <div id="get-to-know-us" class="reveal">
+        <h1 id="get-to-know-us-title">
+          GET TO KNOW US
+        </h1>
+        <AboutUsCard id="team"
+                    text="Team"
+                    textTwo="Our team consists of professional climbers as well as weekend hikers."
+                    icon="groups"/>
+        <AboutUsCard id="products"
+                    text="Products"
+                    textTwo="All our employees are hiking enthusiasts and we have tested all our products."
+                    icon="verified"/>
+        <AboutUsCard id="partners"
+                    text="Partners"
+                    textTwo="Only premium equipment from brands such as Bergans, North Face, Devold and Mammut."
+                    icon="handshake"/>
+        <AboutUsCard id="health"
+                    text="Health"
+                    textTwo="The goal of our products is to promote a healthier lifestyle"
+                    icon="favorite"/>
+      </div>
+    </div>
   </main>
 </template>
 
-<script>
+<script defer>
 import AppButton from "@/components/AppButton.vue";
+import AboutUsCard from "@/components/AboutUsCard.vue";
+import {activate} from "../stores/animations.js"
 
 export default {
   components: {
     AppButton,
+    AboutUsCard
   },
+  methods:{
+  }
 };
+activate()
 </script>
 
 <style scoped>
+@import "../stores/animation.css";
+
 .hero-section {
   display: grid;
   overflow: hidden;
@@ -29,6 +60,42 @@ export default {
   grid-template-columns: 18vw 1fr 18vw;
   align-items: center;
   padding-bottom: 6vh;
+}
+
+#get-to-know-us{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 40rem 1fr;
+  height: 80rem;
+  text-align: center;
+  color: white;
+}
+
+#background{
+  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("../assets/get-to-know.jpg");
+  background-size: cover;
+}
+
+#get-to-know-us-title{
+  grid-area: 1/2/2/4;
+  padding-top: 20rem;
+  font-size: 4rem;
+}
+
+#team{
+  grid-area: 2/1/3/2;
+}
+
+#products{
+  grid-area: 2/2/3/3;
+}
+
+#partners{
+  grid-area: 2/3/3/4;
+}
+
+#health{
+  grid-area: 2/4/3/5;
 }
 
 #hero-image-text {
