@@ -4,10 +4,10 @@
   </div>
   <header>
     <router-link to="/"
-      ><div class="header-container">
-        <img src="@/assets/leeezard.png" alt="logo" id="logo" />
-        <span>XXS</span>
-      </div></router-link
+    ><div class="header-container">
+      <img src="@/assets/leeezard.png" alt="logo" id="logo" />
+      <span>XXS</span>
+    </div></router-link
     >
     <nav>
       <ul>
@@ -17,12 +17,11 @@
       </ul>
     </nav>
     <div class="headerNavigation">
-      <span class="material-icons md"> search </span>
       <span class="material-icons md" @click="goToShoppingCart">
         shopping_cart
       </span>
       <router-link to="/login"
-        ><span class="material-icons md"> person_outline </span></router-link
+      ><span class="material-icons md"> person_outline </span></router-link
       >
     </div>
   </header>

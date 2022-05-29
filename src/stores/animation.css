@@ -9,3 +9,20 @@
     transform: translateY(0px);
     opacity: 1;
 }
+
+.init-animation{
+    animation: fade-in;
+    animation-duration: 1s;
+}
+
+@keyframes fade-in {
+    from {
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

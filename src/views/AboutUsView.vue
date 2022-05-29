@@ -1,6 +1,6 @@
 <template>
   <div id="about-us-header">
-    <h1 class="reveal">BY US, FOR YOU</h1>
+    <h1 class="init-animation">BY US, FOR YOU</h1>
   </div>
   <section class="further-reading" id="about-us">
     <img src="@/assets/staff.jpg" alt=""/>

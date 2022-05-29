@@ -30,7 +30,7 @@
                 delete
               </span>
             </td>
-            <td><img :src="product.image" width="30" height="30" /></td>
+            <td><img :src="product.image_path" width="30" height="30" /></td>
             <td>
               <h5>{{ product.name }}</h5>
             </td>
