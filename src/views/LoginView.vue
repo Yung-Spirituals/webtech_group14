@@ -2,7 +2,7 @@
   <div id="login">
     <img src="@/assets/leeezard.png" alt="logo"/>
     <form action="#" id="loginForm" v-on:submit.prevent="login()">
-      <h1>LOGIN</h1>
+      <h2>LOGIN</h2>
       <div id="info">
         <label>
           <input id="username" type="text">
@@ -68,7 +68,7 @@ label input {
   border: 0;
   border-bottom: 0.2rem solid #222222;
   color: #222222;
-  font-size: 1.5rem;
+  font-size: 2rem;
   outline: 0;
   padding: 0.6rem 2rem;
   transition: all 0.3s;
@@ -81,7 +81,7 @@ label input:focus {
 }
 
 label input:valid + .label-text {
-  font-size: 1.7rem;
+  font-size: 2rem;
   transform: translateY(-7rem);
 }
 
@@ -110,8 +110,5 @@ label input:valid + .label-text {
   cursor: pointer;
 }
 
-p{
-  font-size: 1.5rem;
-}
 
 </style>

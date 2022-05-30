@@ -1,39 +1,39 @@
 <template>
-  <div id="about-us-header">
+  <div id="about-us-header" role="img" aria-label="Man standing in nature">
     <h1 class="init-animation">BY US, FOR YOU</h1>
   </div>
-  <section class="further-reading" id="about-us">
-    <img src="@/assets/staff.jpg" alt=""/>
+  <section class="further-reading" id="about-us" role="complementary" aria-labelledby="Who are we?">
+    <img src="@/assets/staff.jpg" alt="Staff member"/>
     <div class="further-reading-text">
-      <h2 class="reveal">WHO ARE WE?</h2>
+      <h2 class="reveal">Who are we?</h2>
       <p class="reveal">Young or old, we help you reach the peaks of your lifetime. With XXS your weekend is a success. Our
         team consists of professional climbers as well as weekend hikers</p>
     </div>
   </section>
-  <section class="further-reading" id="health-benefits">
+  <section class="further-reading" id="health-benefits" role="complementary" aria-labelledby="Why go hiking?">
     <div class="further-reading-text">
       <h2 class="reveal">Why go hiking?</h2>
       <p class="reveal"><q>Hiking isn't just good fun, but it's also really good for your health. Fantastic for the mind, body and
         soul. After all, being out in nature is always beneficial.</q></p>
       <br>
-      <p class="reveal">Read more about the benefits of hiking <a href="https://www.ridestore.com/mag/why-hiking-is-good-for-you/">here</a></p>
+      <p class="reveal">Read more about the benefits of hiking <a href="https://www.ridestore.com/mag/why-hiking-is-good-for-you/" role="link" >here</a></p>
     </div>
-    <img src="@/assets/old-couple.jpg" alt=""/>
+    <img src="@/assets/old-couple.jpg" alt="Old couple hiking"/>
   </section>
-  <section class="further-reading" id="products-and-services">
-    <img src="@/assets/products-and-services.jpg" alt=""/>
+  <section class="further-reading" id="products-and-services" role="complementary" aria-labelledby="Our products and services">
+    <img src="@/assets/products-and-services.jpg" alt="Backpacks"/>
     <div class="further-reading-text">
-      <h2 class="reveal">OUR PRODUCTS & SERVICES</h2>
+      <h2 class="reveal">Our products and services</h2>
       <p class="reveal">We sell only premium equipment from brands such as Bergans, North Face, Devold and Mammut. All
         our employees are hiking enthusiasts and we have tested all we sell in the shop. P.S. We have warm
         closes for dogs. Check out our products!</p>
-      <AppButton class="reveal" text="TO PRODUCTS"/>
+      <AppButton class="reveal" text="TO PRODUCTS" aria-labelledby="To products"/>
     </div>
   </section>
 </template>
 
 <script defer>
-import AboutUsCard from "@/components/AboutUsCard.vue"
+import AboutUsCard from "@/components/KnowUs.vue"
 import AppButton from "@/components/AppButton.vue"
 import {activate} from "../stores/animations.js"
 export default {
@@ -91,14 +91,7 @@ activate();
   object-position: 50% 50%;
 }
 
-p{
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 3rem;
-}
-
 h2{
-  font-size: 3rem;
   padding-bottom: 2rem;
 }
 </style>

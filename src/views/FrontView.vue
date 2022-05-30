@@ -3,12 +3,12 @@
     <section class="hero-section">
       <div id="hero-image-text">
         <h1>SIZE DOESN'T MATTER</h1>
-        <p>Large or small, beginner or pro, we have you covered! ;)</p>
-        <AppButton text="TO SHOP" />
+        <h3>Large or small, beginner or pro, we have you covered!</h3>
+        <AppButton text="TO SHOP" aria-labelledby="Take to shop"/>
       </div>
-      <img src="@/assets/hero-image.jpg" alt="woman hiking" id="hero-image" />
+      <img src="@/assets/hero-image.jpg" alt="Woman hiking" id="hero-image" />
     </section>
-    <section id="background">
+    <section id="background" role="complementary" aria-label="Get to know us">
       <div id="get-to-know-us" class="reveal">
         <h1 id="get-to-know-us-title">
           GET TO KNOW US
@@ -31,7 +31,7 @@
                      icon="favorite"/>
       </div>
     </section>
-    <section id="testimonials">
+    <section id="testimonials" role="complementary" aria-labelledby="Testimonials">
       <TestimonialCard
           class="reveal"
           id="testimonial-hiker"
@@ -56,7 +56,7 @@
 
 <script defer>
 import AppButton from "@/components/AppButton.vue";
-import AboutUsCard from "@/components/AboutUsCard.vue";
+import AboutUsCard from "@/components/KnowUs.vue";
 import TestimonialCard from "@/components/TestimonialCard.vue";
 import {activate} from "../stores/animations.js"
 
@@ -85,13 +85,13 @@ activate()
 }
 
 #testimonial-hiker{
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1/1/2/2;
 }
 #testimonial-ceo{
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 1/2/2/3;
 }
 #testimonial-dog{
-  grid-area: 1 / 3 / 2 / 4;
+  grid-area: 1/3/2/4;
 }
 
 .hero-section {
@@ -141,17 +141,13 @@ activate()
 
 #hero-image-text {
   grid-area: 2/2/3/3;
+  text-align: center;
+  line-height: 10;
 }
 
-#hero-image-text h1 {
-  font-size: 4vw;
-  font-weight: 800;
-}
-
-#hero-image-text p {
-  font-size: 1.5vw;
-  padding-left: 0.2vw;
-  margin-bottom: 2vh;
+#hero-image-text h1, h3{
+  color: #090909;
+  font-weight: 700;
 }
 
 #hero-image {
@@ -160,6 +156,6 @@ activate()
   max-height: 87vh;
   min-width: 100vw;
   object-fit: cover;
-  object-position: 50% 10%;
+  object-position: 50% 50%;
 }
 </style>

@@ -1,35 +1,36 @@
 <template>
-  <footer>
-    <div class="useful-information" id="extras-list">
+  <footer role="contentinfo">
+    <div class="extra-information" id="extras-list">
       <ul>
         <li>DISCOVER</li>
-        <li><RouterLink to="/find-a-store">FIND A STORE</RouterLink></li>
-        <li><RouterLink to="/sign-up-email">SIGN UP FOR EMAILS</RouterLink></li>
-        <li><RouterLink to="/feedback">FEEDBACK</RouterLink></li>
+        <li><RouterLink to="/find-a-store">Find a store</RouterLink></li>
+        <li><RouterLink to="/sign-up-email">Sign up for emails</RouterLink></li>
+        <li><RouterLink to="/feedback">Feedback</RouterLink></li>
       </ul>
     </div>
-    <div class="useful-information" id="get-help-list">
+    <div class="extra-information" id="get-help-list">
       <ul>
         <li>GET HELP</li>
-        <li><RouterLink to="/order-status">ORDER STATUS</RouterLink></li>
-        <li><RouterLink to="/shipping-delivery">SHIPPING AND DELIVERY</RouterLink></li>
-        <li><RouterLink to="/returns">RETURNS</RouterLink></li>
-        <li><RouterLink to="/payment-options">PAYMENT OPTIONS</RouterLink></li>
-        <li><RouterLink to="/contact-us">CONTACT US</RouterLink></li>
+        <li><RouterLink to="/order-status">Order status</RouterLink></li>
+        <li><RouterLink to="/shipping-delivery">Shipping and delivery</RouterLink></li>
+        <li><RouterLink to="/returns">Returns</RouterLink></li>
+        <li><RouterLink to="/payment-options">Payment options</RouterLink></li>
+        <li><RouterLink to="/contact-us">Contact us</RouterLink></li>
       </ul>
     </div>
-    <div class="useful-information" id="about-us-list">
+    <div class="extra-information" id="about-us-list">
       <ul>
         <li>ABOUT US</li>
-        <li><RouterLink to="/news">NEWS</RouterLink></li>
-        <li><RouterLink to="/careers">CAREERS</RouterLink></li>
-        <li><RouterLink to="/sustainability">SUSTAINABILITY</RouterLink></li>
+        <li><RouterLink to="/about-us">About us</RouterLink></li>
+        <li><RouterLink to="/news">News</RouterLink></li>
+        <li><RouterLink to="/careers">Careers</RouterLink></li>
+        <li><RouterLink to="/sustainability">Sustainability</RouterLink></li>
       </ul>
     </div>
-    <div class="useful-information" id="socials-list">
+    <div class="extra-information" id="socials-list">
       <ul>
         <li>SOCIALS</li>
-        <li>FIND US ON:</li>
+        <li>Find us on:</li>
         <li>
           <img src="@/components/icons/facebook.png" alt="facebook-icon">
         </li>
@@ -61,19 +62,15 @@ footer a:link, footer a:visited, footer a:active{
 }
 
 footer li{
-  font-size: 0.9vw;
-
+  color: white;
+  padding-bottom: 1.5rem;
 }
 
 footer li:nth-child(1){
-  font-size: 1vw;
+  font-size: 2rem;
   color: #55d6aa;
-  padding-bottom: 1vw;
-  padding-top: 2vw;
-}
-
-footer li:not(:first-child) {
-  margin-bottom: 1vw;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 #extras-list{
@@ -92,7 +89,7 @@ footer li:not(:first-child) {
   grid-area: 2/5/3/6;
 }
 
-.useful-information{
+.extra-information{
   color: white;
   justify-self: center;
 }

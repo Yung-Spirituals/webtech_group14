@@ -58,6 +58,7 @@ img{
 blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
+  font-size: 2rem;
 }
 blockquote::before {
   color: #55d6aa;

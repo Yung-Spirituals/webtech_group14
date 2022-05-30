@@ -1,28 +1,27 @@
 <template>
   <div id="topbar">
-    <p>Fite me</p>
   </div>
-  <header>
-    <router-link to="/"
-    ><div class="header-container">
+  <header role="banner">
+    <router-link to="/" role="link" aria-label="Back to home page">
+      <div class="header-container">
       <img src="@/assets/leeezard.png" alt="logo" id="logo" />
       <span>XXS</span>
-    </div></router-link
-    >
-    <nav>
+      </div>
+    </router-link>
+    <nav role="navigation">
       <ul>
         <li v-for="route in filteredRoutes" :key="route.path">
           <RouterLink :to="route.path">{{ route.name }}</RouterLink>
         </li>
       </ul>
     </nav>
-    <div class="headerNavigation">
-      <span class="material-icons md" @click="goToShoppingCart">
+    <div class="headerIconNavigation">
+      <span class="material-icons md" @click="goToShoppingCart" role="link" aria-label="To shopping cart">
         shopping_cart
       </span>
-      <router-link to="/login"
-      ><span class="material-icons md"> person_outline </span></router-link
-      >
+      <router-link to="/login" role="link" aria-label="To login page">
+        <span class="material-icons md"> person_outline </span>
+      </router-link>
     </div>
   </header>
 </template>
@@ -77,8 +76,8 @@ ul {
 nav li {
   float: left;
   margin: 4.5rem;
-  font-size: 1.7rem;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 div a:link,
@@ -88,7 +87,7 @@ div a:active {
   text-decoration: none;
   text-transform: capitalize;
 }
-.headerNavigation {
+.headerIconNavigation {
   font-size: 3.5rem;
   padding: 0.5rem;
   margin-right: 8rem;

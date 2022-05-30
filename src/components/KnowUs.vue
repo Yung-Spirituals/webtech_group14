@@ -43,11 +43,6 @@ export default {
 p{
   padding-right: 6rem;
   padding-left: 6rem;
-  font-size: 1.8rem;
-}
-
-h2{
-  font-size: 3rem;
 }
 
 .md{
