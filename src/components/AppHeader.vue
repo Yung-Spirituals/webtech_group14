@@ -56,6 +56,7 @@ header {
   background: #55d6aa;
   align-items: center;
 }
+
 .header-container {
   display: flex;
   margin-left: 8rem;
@@ -87,6 +88,11 @@ div a:active {
   text-decoration: none;
   text-transform: capitalize;
 }
+
+li a:hover{
+  text-decoration: underline;
+}
+
 .headerIconNavigation {
   font-size: 3.5rem;
   padding: 0.5rem;
@@ -99,4 +105,18 @@ div a:active {
   grid-column-end: 5;
   cursor: pointer;
 }
+
+/************************************
+            media query
+************************************/
+
+/**
+First breakpoint for the header
+*/
+@media screen and (max-width: 48em){
+  header {
+    background: #93d655;
+  }
+}
+
 </style>

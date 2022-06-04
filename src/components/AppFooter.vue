@@ -102,5 +102,14 @@ footer li:nth-child(1){
 #socials-list li:nth-child(n+3){
   float:left;
   margin-right: 1.2vw;
+  cursor: pointer;
 }
+
+li a:hover{
+  text-decoration: underline;
+}
+
+/************************************
+            media query
+************************************/
 </style>

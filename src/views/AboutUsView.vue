@@ -66,7 +66,7 @@ activate();
   flex-direction: row;
   height: 70rem;
   width: 100%;
-  background-color: #dee5e2;
+  background-color: #c2f0e1;
 }
 
 .further-reading-text{
@@ -93,5 +93,70 @@ activate();
 
 h2{
   padding-bottom: 2rem;
+}
+
+/************************************
+            media query
+************************************/
+
+
+/**
+Breakpoint for get-to-know-us
+ */
+@media screen and (max-width: 75em){
+
+  #about-us img{
+    object-position: 20%;
+  }
+
+  #health-benefits img{
+    object-position: 45% 50%;
+  }
+}
+
+/**
+Breakpoint for get-to-know-us
+ */
+@media screen and (max-width: 37.5em){
+
+  #about-us{
+    flex-direction: column;
+  }
+
+  #health-benefits{
+    flex-direction: column-reverse;
+  }
+
+  #products-and-services{
+    flex-direction: column;
+  }
+
+  img{
+    width: 100%;
+    height: 40rem;
+  }
+
+  .further-reading{
+    height: 100%;
+    align-items: center;
+    background-color: #c2f0e1;
+  }
+
+  .further-reading img{
+    width: 100%;
+  }
+
+  .further-reading-text{
+    padding: 5rem 0;
+  }
+
+  h1{
+    text-align: center;
+    color: red;
+  }
+
+  section{
+    margin-bottom: 3rem;
+  }
 }
 </style>

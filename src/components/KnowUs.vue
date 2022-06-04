@@ -48,4 +48,19 @@ p{
 .md{
   font-size: 8rem;
 }
+
+/************************************
+            media query
+************************************/
+
+/**
+Breakpoint for know-us-card-text
+ */
+@media screen and (max-width: 68em){
+  p{
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
 </style>
