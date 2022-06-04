@@ -45,7 +45,9 @@
       </div>
       <div class="BuyOrFavorite">
         <div class="BuyButtonArea">
-          <div class="BuyButton" @click="addToCart">ADD TO CART</div>
+          <div class="BuyButton"
+               @click="cartStore.addProductToCart(currentProduct)">
+            ADD TO CART</div>
         </div>
       </div>
       <h2 class="detailedDescription">DESCRIPTION</h2>
@@ -57,25 +59,25 @@
 </template>
 
 <script setup>
-import { useCartStore } from "@/stores/cart";
 import { useRoute } from "vue-router";
 import { useProductStore } from "@/stores/product";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
-const route = useRoute();
+import { useCartStore } from "@/stores/cart";
+
 const cartStore = useCartStore();
-const store = useProductStore();
-const { products } = storeToRefs(store);
-store.getProducts();
+
+const route = useRoute();
+
+const productStore = useProductStore();
+const { products } = storeToRefs(productStore);
+productStore.getProducts();
 
 const currentProduct = computed(() => {
   return products.value.find((product) => {
     return product.id + "" === route.params.id;
   });
 });
-function addToCart() {
-  cartStore.addToCart(currentProduct);
-}
 </script>
 
 
@@ -272,7 +274,6 @@ function addToCart() {
   align-items: center;
   justify-content: center;
   border-top: 0.1em #b0b0b0 solid;
-  gap: none;
 }
 .productDetails {
   display: flex;

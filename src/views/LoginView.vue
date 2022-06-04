@@ -1,16 +1,16 @@
 <template>
   <div id="login">
     <img src="@/assets/leeezard.png" alt="logo"/>
-    <form action="#" id="loginForm" v-on:submit.prevent="login()">
+    <form id="loginForm" v-on:submit.prevent="login">
       <h2>LOGIN</h2>
       <div id="info">
         <label>
           <input id="username" type="text">
-          <div class="label-text">Username</div>
+          <span class="label-text">Username</span>
         </label>
         <label>
           <input id="password" type="password">
-          <div class="label-text">Password</div>
+          <span class="label-text">Password</span>
         </label>
       </div>
       <input type="submit" value="Submit" id="submit">
@@ -21,6 +21,20 @@
 </template>
 
 <script>
+import { sendAuthenticationRequest } from "../stores/authentication";
+
+function login() {
+  console.log(document.getElementById("username").innerHTML)
+  sendAuthenticationRequest(document.getElementById("username").value,
+      document.getElementById("password").value);
+}
+
+export default {
+  methods: {
+    login
+  }
+}
+
 </script>
 
 
@@ -78,6 +92,10 @@ label input {
 
 label input:focus {
   width: 45rem;
+}
+
+span {
+  display: block;
 }
 
 label input:valid + .label-text {

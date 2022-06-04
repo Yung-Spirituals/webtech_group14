@@ -4,14 +4,11 @@ export const useProductStore = defineStore({
   state: () => ({
     products: []
   }),
-  getters: {
-
-  },
   actions: {
     async getProducts() {
-      const response = await fetch("http://localhost:8080/api/get-products");
+      const response = await fetch("https://gr14.appdev.cloudns.ph/api/get-products");
       this.products = await response.json();
-      console.log("1")
+      console.log(this.products.toString())
     }
   }
 })

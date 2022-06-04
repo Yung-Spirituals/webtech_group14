@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia'
+import { storeToRefs } from 'pinia';
 import { useRouter } from "vue-router";
 import { useProductStore } from "@/stores/product";
 import ProductFilters from "@/components/ProductFilters.vue";
