@@ -1,13 +1,13 @@
+<!--Universal header that will be displayed on all pages-->
 <template>
-  <div id="topbar">
-  </div>
   <header role="banner">
-    <router-link to="/" role="link" aria-label="Back to home page">
+    <router-link to="/" role="link" aria-label="back to home page">
       <div class="header-container">
       <img src="@/assets/leeezard.png" alt="logo" id="logo" />
       <span>XXS</span>
       </div>
     </router-link>
+<!--  ???????????????????????????????????????????????????????  -->
     <nav role="navigation">
       <ul>
         <li v-for="route in filteredRoutes" :key="route.path">
@@ -15,11 +15,11 @@
         </li>
       </ul>
     </nav>
-    <div class="headerIconNavigation">
-      <span class="material-icons md" @click="goToShoppingCart" role="link" aria-label="To shopping cart">
+    <div class="icon-navigation">
+      <span class="material-icons md" @click="goToShoppingCart" role="link" aria-label="to shopping cart">
         shopping_cart
       </span>
-      <router-link to="/login" role="link" aria-label="To login page">
+      <router-link to="/login" role="link" aria-label="to login page">
         <span class="material-icons md"> person_outline </span>
       </router-link>
     </div>
@@ -41,20 +41,13 @@ function goToShoppingCart() {
 </script>
 
 <style scoped>
-#topbar {
-  background-color: #222222;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  font-weight: normal;
-}
+
 header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   background: #55d6aa;
   align-items: center;
+  border-top: #222222 solid 1.5rem;
 }
 
 .header-container {
@@ -65,6 +58,7 @@ header {
   justify-content: center;
   cursor: pointer;
 }
+
 #logo {
   max-height: 9rem;
   max-width: 9rem;
@@ -93,7 +87,7 @@ li a:hover{
   text-decoration: underline;
 }
 
-.headerIconNavigation {
+.icon-navigation {
   font-size: 3.5rem;
   padding: 0.5rem;
   margin-right: 8rem;
@@ -111,11 +105,17 @@ li a:hover{
 ************************************/
 
 /**
-First breakpoint for the header
+Responsiveness for header when it hits a breakpoint
 */
 @media screen and (max-width: 48em){
-  header {
-    background: #93d655;
+
+  .header-container {
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+
+  nav li {
+    margin: 2rem;
   }
 }
 

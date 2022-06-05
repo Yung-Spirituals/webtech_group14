@@ -1,7 +1,8 @@
+<!--Login page-->
 <template>
   <div id="login">
     <img src="@/assets/leeezard.png" alt="logo"/>
-    <form id="loginForm" v-on:submit.prevent="login">
+    <form id="login-form" v-on:submit.prevent="login">
       <h2>LOGIN</h2>
       <div id="info">
         <label>
@@ -70,6 +71,9 @@ label .label-text {
   line-height: 3rem;
   text-transform: uppercase;
   transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 
 label input:focus + .label-text {
@@ -86,6 +90,9 @@ label input {
   outline: 0;
   padding: 0.6rem 2rem;
   transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   width: 30rem;
   height: 3.8rem;
 }
@@ -101,6 +108,9 @@ span {
 label input:valid + .label-text {
   font-size: 2rem;
   transform: translateY(-7rem);
+  -webkit-transform: translateY(-7rem);
+  -moz-transform: translateY(-7rem);
+  -o-transform: translateY(-7rem);
 }
 
 #submit {
@@ -118,6 +128,9 @@ label input:valid + .label-text {
 
 #submit{
   transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
 }
 
 #submit:hover{
@@ -125,6 +138,8 @@ label input:valid + .label-text {
   color: #55d6aa;
   box-shadow: inset 15rem 0 0 0 #222222;
   -webkit-box-shadow: inset 15rem 0 0 0 #222222;
+  -moz-box-shadow: inset 15rem 0 0 0 #222222;
+  -o-box-shadow: inset 15rem 0 0 0 #222222;
   cursor: pointer;
 }
 

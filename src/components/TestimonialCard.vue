@@ -1,6 +1,7 @@
+<!--Reusable testimonial cards-->
 <template>
-  <div id="container">
-    <div class="image">
+  <div class="testimonial-card">
+    <div class="testimonial-image">
       <img :src= imageURL  alt=""/>
     </div>
     <div>
@@ -36,17 +37,9 @@ export default {
 
 
 <style scoped>
-#container{
-  overflow: hidden;
-  height: 1fr;
+.testimonial-card{
+  height: 70rem;
   width: 40rem;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  padding: 5rem;
 }
 
 img{

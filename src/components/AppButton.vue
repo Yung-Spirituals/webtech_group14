@@ -1,3 +1,4 @@
+<!--Reusable button -->
 <template>
   <button class="button" role="button">
     <slot>{{ text }}</slot>
@@ -5,7 +6,6 @@
 </template>
 
 <script>
-
 export default {
   props: {
     text: {
@@ -28,6 +28,8 @@ export default {
   font-weight: 800;
   box-shadow: inset 0 0 0 0 #222222;
   -webkit-box-shadow: inset 0 0 0 0 #222222;
+  -moz-box-shadow: inset 0 0 0 0 #222222;
+  -o-box-shadow: inset 0 0 0 0 #222222;
 }
 
 .button{
@@ -39,6 +41,8 @@ export default {
   color: #55d6aa;
   box-shadow: inset 15rem 0 0 0 #222222;
   -webkit-box-shadow: inset 15rem 0 0 0 #222222;
+  -moz-box-shadow: inset 15rem 0 0 0 #222222;
+  -o-box-shadow: inset 15rem 0 0 0 #222222;
   cursor: pointer;
 }
 </style>

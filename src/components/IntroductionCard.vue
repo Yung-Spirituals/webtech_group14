@@ -1,3 +1,4 @@
+<!--Reusable introduction cards-->
 <template>
   <div id="container">
     <div>
@@ -41,8 +42,8 @@ export default {
 }
 
 p{
-  padding-right: 6rem;
-  padding-left: 6rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .md{
@@ -53,13 +54,10 @@ p{
             media query
 ************************************/
 
-/**
-Breakpoint for know-us-card-text
- */
 @media screen and (max-width: 68em){
   p{
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 

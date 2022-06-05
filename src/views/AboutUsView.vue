@@ -1,39 +1,40 @@
+<!--About us page-->
 <template>
-  <div id="about-us-header" role="img" aria-label="Man standing in nature">
+  <div id="about-us-header" role="img" aria-label="man standing in nature">
     <h1 class="init-animation">BY US, FOR YOU</h1>
   </div>
-  <section class="further-reading" id="about-us" role="complementary" aria-labelledby="Who are we?">
-    <img src="@/assets/staff.jpg" alt="Staff member"/>
-    <div class="further-reading-text">
-      <h2 class="reveal">Who are we?</h2>
-      <p class="reveal">Young or old, we help you reach the peaks of your lifetime. With XXS your weekend is a success. Our
-        team consists of professional climbers as well as weekend hikers</p>
+  <section id="who-are-we" class="slide-container reveal" role="complementary" aria-labelledby="who are we?">
+    <img src="@/assets/staff.jpg" alt="staff member"/>
+    <div class="slide-information">
+      <h2>Who are we?</h2>
+      <p>Young or old, we help you reach the peaks of your lifetime. With XXS your weekend is a success. Our
+        team consists of professional climbers as well as weekend hikers.</p>
     </div>
   </section>
-  <section class="further-reading" id="health-benefits" role="complementary" aria-labelledby="Why go hiking?">
-    <div class="further-reading-text">
-      <h2 class="reveal">Why go hiking?</h2>
-      <p class="reveal"><q>Hiking isn't just good fun, but it's also really good for your health. Fantastic for the mind, body and
+  <section id="health-benefits" class="slide-container reveal" role="complementary" aria-labelledby="why go hiking?">
+    <div class="slide-information">
+      <h2>Why go hiking?</h2>
+      <p><q>Hiking isn't just good fun, but it's also really good for your health. Fantastic for the mind, body and
         soul. After all, being out in nature is always beneficial.</q></p>
       <br>
-      <p class="reveal">Read more about the benefits of hiking <a href="https://www.ridestore.com/mag/why-hiking-is-good-for-you/" role="link" >here</a></p>
+      <p>Read more about the benefits of hiking <a href="https://www.ridestore.com/mag/why-hiking-is-good-for-you/" role="link" >here</a></p>
     </div>
-    <img src="@/assets/old-couple.jpg" alt="Old couple hiking"/>
+    <img src="@/assets/old-couple.jpg" alt="old couple hiking"/>
   </section>
-  <section class="further-reading" id="products-and-services" role="complementary" aria-labelledby="Our products and services">
+  <section id="products-and-services" class="slide-container reveal" role="complementary" aria-labelledby="our products and services">
     <img src="@/assets/products-and-services.jpg" alt="Backpacks"/>
-    <div class="further-reading-text">
-      <h2 class="reveal">Our products and services</h2>
-      <p class="reveal">We sell only premium equipment from brands such as Bergans, North Face, Devold and Mammut. All
+    <div class="slide-information">
+      <h2>Our products and services</h2>
+      <p>We sell only premium equipment from brands such as Bergans, North Face, Devold and Mammut. All
         our employees are hiking enthusiasts and we have tested all we sell in the shop. P.S. We have warm
         closes for dogs. Check out our products!</p>
-      <AppButton class="reveal" text="TO PRODUCTS" aria-labelledby="To products"/>
+      <AppButton text="TO PRODUCTS" aria-labelledby="to products"/>
     </div>
   </section>
 </template>
 
 <script defer>
-import AboutUsCard from "@/components/KnowUs.vue"
+import AboutUsCard from "@/components/IntroductionCard.vue"
 import AppButton from "@/components/AppButton.vue"
 import {activate} from "../stores/animations.js"
 export default {
@@ -61,7 +62,7 @@ activate();
   align-items: center;
 }
 
-.further-reading{
+.slide-container{
   display: flex;
   flex-direction: row;
   height: 70rem;
@@ -69,7 +70,7 @@ activate();
   background-color: #c2f0e1;
 }
 
-.further-reading-text{
+.slide-information{
   width: 50%;
   text-align: center;
   align-self: center;
@@ -77,13 +78,13 @@ activate();
   padding-left: 3rem;
 }
 
-.further-reading img{
+.slide-container img{
   width: 50%;
   object-fit: cover;
   filter: brightness(95%);
 }
 
-#about-us img{
+#who-are-we img{
   object-position: 1%;
 }
 
@@ -99,13 +100,12 @@ h2{
             media query
 ************************************/
 
-
 /**
-Breakpoint for get-to-know-us
+Repositioning of image position, to focus better on center of the images
  */
 @media screen and (max-width: 75em){
 
-  #about-us img{
+  #who-are-we img{
     object-position: 20%;
   }
 
@@ -114,17 +114,27 @@ Breakpoint for get-to-know-us
   }
 }
 
-/**
-Breakpoint for get-to-know-us
- */
-@media screen and (max-width: 37.5em){
+@media screen and (max-width: 45em){
 
-  #about-us{
+  #about-us-header{
+    height: 60rem;
+    color: white;
+  }
+
+  #who-are-we img{
+    object-position: 0 50%;
+  }
+
+  #who-are-we{
     flex-direction: column;
   }
 
   #health-benefits{
     flex-direction: column-reverse;
+  }
+
+  #health-benefits img{
+    object-position: 50% 70%;
   }
 
   #products-and-services{
@@ -136,27 +146,27 @@ Breakpoint for get-to-know-us
     height: 40rem;
   }
 
-  .further-reading{
+  .slide-container{
     height: 100%;
     align-items: center;
     background-color: #c2f0e1;
   }
 
-  .further-reading img{
+  .slide-container img{
     width: 100%;
   }
 
-  .further-reading-text{
+  .slide-information{
     padding: 5rem 0;
   }
 
   h1{
     text-align: center;
-    color: red;
   }
 
   section{
     margin-bottom: 3rem;
+    margin-top: 3rem;
   }
 }
 </style>

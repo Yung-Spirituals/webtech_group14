@@ -1,30 +1,31 @@
+<!--Universal footer that will be displayed on all pages-->
 <template>
   <footer role="contentinfo">
     <div class="extra-information" id="extras-list">
       <ul>
         <li>DISCOVER</li>
-        <li><RouterLink to="/find-a-store">Find a store</RouterLink></li>
-        <li><RouterLink to="/sign-up-email">Sign up for emails</RouterLink></li>
-        <li><RouterLink to="/feedback">Feedback</RouterLink></li>
+        <li><router-link to="/find-a-store">Find a store</router-link></li>
+        <li><router-link to="/sign-up-email">Sign up for emails</router-link></li>
+        <li><router-link to="/feedback">Feedback</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="get-help-list">
       <ul>
         <li>GET HELP</li>
-        <li><RouterLink to="/order-status">Order status</RouterLink></li>
-        <li><RouterLink to="/shipping-delivery">Shipping and delivery</RouterLink></li>
-        <li><RouterLink to="/returns">Returns</RouterLink></li>
-        <li><RouterLink to="/payment-options">Payment options</RouterLink></li>
-        <li><RouterLink to="/contact-us">Contact us</RouterLink></li>
+        <li><router-link to="/order-status">Order status</router-link></li>
+        <li><router-link to="/shipping-delivery">Shipping and delivery</router-link></li>
+        <li><router-link to="/returns">Returns</router-link></li>
+        <li><router-link to="/payment-options">Payment options</router-link></li>
+        <li><router-link to="/contact-us">Contact us</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="about-us-list">
       <ul>
         <li>ABOUT US</li>
-        <li><RouterLink to="/about-us">About us</RouterLink></li>
-        <li><RouterLink to="/news">News</RouterLink></li>
-        <li><RouterLink to="/careers">Careers</RouterLink></li>
-        <li><RouterLink to="/sustainability">Sustainability</RouterLink></li>
+        <li><router-link to="/about-us">About us</router-link></li>
+        <li><router-link to="/news">News</router-link></li>
+        <li><router-link to="/careers">Careers</router-link></li>
+        <li><router-link to="/sustainability">Sustainability</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="socials-list">
@@ -95,13 +96,13 @@ footer li:nth-child(1){
 }
 
 #socials-list img{
-  width: 2vw;
-  height: 2vw;
+  width: 4rem;
+  height: 4rem;
 }
 
 #socials-list li:nth-child(n+3){
   float:left;
-  margin-right: 1.2vw;
+  margin-right: 2rem;
   cursor: pointer;
 }
 
@@ -112,4 +113,28 @@ li a:hover{
 /************************************
             media query
 ************************************/
+
+/**
+Responsiveness for footer when it hits a breakpoint
+*/
+@media screen and (max-width: 45em){
+  footer{
+    column-gap: 2rem;
+  }
+
+  footer li:nth-child(1){
+    font-size: 1.5rem;
+  }
+
+  footer li{
+    color: white;
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  #socials-list img{
+    width: 3rem;
+    height: 3rem;
+  }
+}
 </style>

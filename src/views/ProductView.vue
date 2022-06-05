@@ -12,7 +12,7 @@
         src="https://www.xxl.no/filespin/20baf6aeefbe4306bb46c5e10bd87cb5?resize=722,722&quality=90&bgcolor=efefef"
       />
     </div>
-    <div class="image">
+    <div class="testimonial-image">
       <img :src="currentProduct.image_path" />
     </div>
     <div class="details">
@@ -114,11 +114,11 @@ const currentProduct = computed(() => {
   margin-bottom: 2rem;
   border-radius: 2rem;
 }
-.image {
+.testimonial-image {
   grid-area: image;
   margin-left: 2rem;
 }
-.image > img {
+.testimonial-image > img {
   width: 100%;
   border-radius: 2rem;
 }

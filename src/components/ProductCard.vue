@@ -1,3 +1,4 @@
+<!--Reusable product cards-->
 <template>
   <div class="product-card">
     <img :src=product.image_path />
