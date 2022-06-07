@@ -16,13 +16,16 @@
       </div>
       <input type="submit" value="Submit" id="submit">
     </form>
+    <app-button text="Log out" @click="logOut"></app-button>
     <p>Don't have an account?</p>
     <p>Sign up</p>
+    <app-button text="Sign up" @click=""></app-button>
   </div>
 </template>
 
 <script>
-import { sendAuthenticationRequest } from "../stores/authentication";
+import { sendAuthenticationRequest, doLogout } from "../stores/authentication";
+import AppButton from "@/components/AppButton.vue";
 
 function login() {
   console.log(document.getElementById("username").innerHTML)
@@ -30,12 +33,22 @@ function login() {
       document.getElementById("password").value);
 }
 
-export default {
-  methods: {
-    login
-  }
+function logOut(){
+  doLogout()
 }
 
+function signUp(){
+
+}
+
+export default {
+  components: {AppButton},
+  methods: {
+    login,
+    logOut,
+    signUp
+  }
+}
 </script>
 
 

@@ -8,41 +8,52 @@ export const useCartStore = defineStore({
         carts:[]
     }),
     actions: {
-        addProductToCart(item){
-            if (this.isInCart(item)){
-                this.updateProductInCart(item.id, item.quantity + 1);
+        async addProductToCart(item) {
+            if (this.findIndexById(item.id) !== -1) {
+                await this.updateProductInCart(item.id, item, item.quantity + 1);
             } else {
-                let cartItem = {
-                    "id": item.id,
-                    "quantity": 1,
-                    "product": item
-                }
-                this.carts.push(cartItem);
+                const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + item.id + "/" + 1, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'bearer: ' + getCookie('jwt')
+                    }
+                })
+                this.carts = await response.json();
+                await this.getCart();
             }
         },
-        updateProductInCart(id, product, newQuantity){
-            if (id===null && newQuantity===null) {
+        async updateProductInCart(id, item, newQuantity) {
+            if (id === null && newQuantity === null) {
             } else {
                 const index = this.findIndexById(id);
                 if (index !== -1) {
-                    this.carts[index] = {
-                        "id": id,
-                        "quantity": newQuantity,
-                        "product": product
-                    }
+                    const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + item.id + "/" + newQuantity, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': 'bearer: ' + getCookie('jwt')
+                        }
+                    })
+                    this.carts = await response.json();
                 }
             }
+            await this.getCart();
         },
-        removeProductFromCart(id) {
-            const index = this.findIndexById(id);
-            if (index === -1) {
-            } else {
-                this.carts.splice(index, 1);
-            }
+        async removeProductFromCart(id) {
+            await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + id, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'bearer: ' + getCookie('jwt')
+                }
+            });
+            await this.getCart()
         },
         findIndexById(id){
-            return this.carts.findIndex((item) => item.id === id);
-        },
+            if (this.carts.length < 0) {
+                return this.carts.findIndex((item) => item.id === id);
+            } else {
+                return -1;
+            }
+        }/*,
         isInCart(item) {
             if (this.carts === null){return false}
             let inCart = false;
@@ -52,15 +63,16 @@ export const useCartStore = defineStore({
                 }
             })
             return inCart;
-        },
-        emptyCart(){
-            this.carts=[];
-            fetch("https://gr14.appdev.cloudns.ph/api/cart", {
+        }*/,
+        async emptyCart() {
+            this.carts = [];
+            await fetch("https://gr14.appdev.cloudns.ph/api/cart", {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'bearer: ' + getCookie('jwt')
                 }
             })
+            await this.getCart();
         },
         async getCart(){
             const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart", {

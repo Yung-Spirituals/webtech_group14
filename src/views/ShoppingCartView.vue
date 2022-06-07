@@ -24,13 +24,15 @@
           {{ cart.product.price }}
         </td>
         <td>
-          <input type="number" value="1" />
+          <input type="number" :value="cart.quantity" />
         </td>
         <td>
-          {{cart.quantity}}
+          {{cart.quantity * cart.product.price}}
         </td>
         <td>
-          <button class="delete-button"><span class="material-symbols-rounded">delete</span></button>
+          <button class="delete-button" @click="removeFromCart(cart.product.id)">
+            <span class="material-symbols-rounded">Delete</span> <span>{{cart.product.price}}</span>
+          </button>
         </td>
       </tr>
       </tbody>
@@ -51,9 +53,24 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useCartStore } from "@/stores/cart";
-const store = useCartStore();
-store.getCart();
-const { carts } = storeToRefs(store);
+const cartStore = useCartStore();
+cartStore.getCart();
+const { carts } = storeToRefs(cartStore);
+</script>
+
+<script>
+import { useCartStore } from "@/stores/cart";
+const cartStore = useCartStore();
+
+function removeFromCart(id){
+  cartStore.removeProductFromCart(id)
+}
+
+export default {
+  methods: {
+    removeFromCart
+  }
+}
 </script>
 
 <style>
@@ -64,5 +81,9 @@ const { carts } = storeToRefs(store);
 }
 h1{
   grid-area: 1/1/2/2;
+}
+
+.product-id{
+  display: none;
 }
 </style>
