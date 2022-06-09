@@ -6,6 +6,7 @@
     </div>
     <h2>{{ text }}</h2>
     <p>{{ textTwo }}</p>
+    <p><a :href="link">Read more here &rarr;</a></p>
   </div>
 </template>
 
@@ -21,6 +22,10 @@ export default {
       type: String
     },
     icon: {
+      required: true,
+      type: String
+    },
+    link:{
       required: true,
       type: String
     }
@@ -48,6 +53,20 @@ p{
 
 .md{
   font-size: 8rem;
+}
+
+a:visited{
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #55d6aa;
+}
+
+a:link {
+  cursor: pointer;
+  color: #ffffff;
 }
 
 /************************************

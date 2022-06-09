@@ -3,11 +3,10 @@
   <header role="banner">
     <router-link to="/" role="link" aria-label="back to home page">
       <div class="header-container">
-      <img src="@/assets/leeezard.png" alt="logo" id="logo" />
-      <span>XXS</span>
+        <img src="@/assets/leeezard.png" alt="logo" id="logo"/>
+        <span>XXS</span>
       </div>
     </router-link>
-<!--  ???????????????????????????????????????????????????????  -->
     <nav role="navigation">
       <ul>
         <li v-for="route in filteredRoutes" :key="route.path">
@@ -15,6 +14,7 @@
         </li>
       </ul>
     </nav>
+    <!-- Icons that can be pressed to get to user profile or shopping cart -->
     <div class="icon-navigation">
       <span class="material-icons md" @click="goToShoppingCart" role="link" aria-label="to shopping cart">
         shopping_cart
@@ -32,7 +32,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {
-  const hiddenRoutes = ["product", "shopping-cart", "login"];
+  const hiddenRoutes = ["product", "shopping-cart", "login", "construction"];
   return !hiddenRoutes.includes(route.name);
 });
 function goToShoppingCart() {

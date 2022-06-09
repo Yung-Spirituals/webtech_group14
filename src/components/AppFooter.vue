@@ -4,28 +4,28 @@
     <div class="extra-information" id="extras-list">
       <ul>
         <li>DISCOVER</li>
-        <li><router-link to="/find-a-store">Find a store</router-link></li>
-        <li><router-link to="/sign-up-email">Sign up for emails</router-link></li>
-        <li><router-link to="/feedback">Feedback</router-link></li>
+        <li><router-link to="/construction">Find a store</router-link></li>
+        <li><router-link to="/construction">Sign up for emails</router-link></li>
+        <li><router-link to="/construction">Feedback</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="get-help-list">
       <ul>
         <li>GET HELP</li>
         <li><router-link to="/order-status">Order status</router-link></li>
-        <li><router-link to="/shipping-delivery">Shipping and delivery</router-link></li>
-        <li><router-link to="/returns">Returns</router-link></li>
-        <li><router-link to="/payment-options">Payment options</router-link></li>
-        <li><router-link to="/contact-us">Contact us</router-link></li>
+        <li><router-link to="/construction">Shipping and delivery</router-link></li>
+        <li><router-link to="/construction">Returns</router-link></li>
+        <li><router-link to="/construction">Payment options</router-link></li>
+        <li><router-link to="/construction">Contact us</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="about-us-list">
       <ul>
         <li>ABOUT US</li>
         <li><router-link to="/about-us">About us</router-link></li>
-        <li><router-link to="/news">News</router-link></li>
-        <li><router-link to="/careers">Careers</router-link></li>
-        <li><router-link to="/sustainability">Sustainability</router-link></li>
+        <li><router-link to="/construction">News</router-link></li>
+        <li><router-link to="/construction">Careers</router-link></li>
+        <li><router-link to="/construction">Sustainability</router-link></li>
       </ul>
     </div>
     <div class="extra-information" id="socials-list">
@@ -68,7 +68,7 @@ footer li{
 }
 
 footer li:nth-child(1){
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: #55d6aa;
   padding-top: 2rem;
   padding-bottom: 1.5rem;

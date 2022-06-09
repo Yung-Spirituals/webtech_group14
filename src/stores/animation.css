@@ -39,9 +39,6 @@ Triggers fade-in animation on page-load.
     -o-animation-duration: 1s;
 }
 
-/**
-????????
- */
 @keyframes fade-in {
     from {
         position: relative;

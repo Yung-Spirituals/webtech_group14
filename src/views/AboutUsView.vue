@@ -67,7 +67,7 @@ activate();
   flex-direction: row;
   height: 70rem;
   width: 100%;
-  background-color: #c2f0e1;
+  background-color: #d0f3e8;
 }
 
 .slide-information{

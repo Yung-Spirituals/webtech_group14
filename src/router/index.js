@@ -30,13 +30,18 @@ const router = createRouter({
     },
     {
       path: '/about-us',
-      name: 'About us',
+      name: 'about us',
       component: () => import('../views/AboutUsView.vue')
     },
-   /* {
+    {
+      path: '/construction',
+      name: 'construction',
+      component: () => import('../views/ConstructionView.vue')
+    },
+  /*  {
       path: '/user',
       name: 'User',
-      component: () => import('../views/UserPageView.vue')
+      component: () => import('../views/AdminPageView.vue')
     },*/
     /*{
       path: '/a-products',

@@ -16,18 +16,22 @@
         <AboutUsCard id="team"
                      text="Team"
                      textTwo="Our team consists of professional climbers as well as weekend hikers."
+                     link="/about-us"
                      icon="groups"/>
         <AboutUsCard id="products"
                      text="Products"
                      textTwo="All our employees are hiking enthusiasts and we have tested all our products."
+                     link="/products"
                      icon="verified"/>
         <AboutUsCard id="partners"
                      text="Partners"
                      textTwo="Only premium equipment from brands such as Bergans, North Face, Devold and Mammut."
+                     link="#our-partners"
                      icon="handshake"/>
         <AboutUsCard id="health"
                      text="Health"
                      textTwo="The goal of our products is to promote a healthier lifestyle"
+                     link="/about-us#health-benefits"
                      icon="favorite"/>
       </div>
     </section>
@@ -95,7 +99,7 @@ activate()
 
 #hero-image-content h1, h3{
   color: #090909;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 #hero-image {
@@ -105,6 +109,7 @@ activate()
   min-width: 100vw;
   object-fit: cover;
   object-position: 50% 50%;
+  filter: brightness(110%);
 }
 
 .hero-section {
@@ -177,11 +182,13 @@ activate()
 h2{
   text-align: center;
   padding-top: 8rem;
+  padding-bottom: 3rem;
 }
 
 #our-partners{
-  background-color: #c2f0e1;
+  background-color: #d0f3e8;
   display: flex;
+  flex-direction: row-reverse;
   height: 80rem;
   align-items: center;
   text-align: center;

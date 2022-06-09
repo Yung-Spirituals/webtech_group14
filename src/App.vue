@@ -38,7 +38,7 @@ p {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 7.5rem;
 }
 
 h2 {
@@ -59,6 +59,6 @@ h5 {
 
 li {
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 </style>
