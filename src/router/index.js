@@ -48,11 +48,11 @@ const router = createRouter({
       name: 'User',
       component: () => import('../views/AdminPageView.vue')
     },*/
-    /*{
-      path: '/a-products',
-      name: 'a-products',
+    {
+      path: '/a-product/:id',
+      name: 'a-product',
       component: () => import('../views/AdminProductView.vue')
-    },*/
+    },
     /*{
       path: '/products',
       name: 'products',
