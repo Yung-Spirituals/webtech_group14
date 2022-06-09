@@ -1,0 +1,1 @@
+import{_ as o,o as r,c as s,e as a,f as n,t as _}from"./index.c5eae7df.js";const c={props:{text:{required:!0,type:String}}},p={class:"button",role:"button"};function u(t,d,e,l,i,f){return r(),s("button",p,[a(t.$slots,"default",{},()=>[n(_(e.text),1)],!0)])}var v=o(c,[["render",u],["__scopeId","data-v-e7e20c28"]]);export{v as A};

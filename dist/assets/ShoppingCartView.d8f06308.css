@@ -1,0 +1,1 @@
+#content{display:grid;grid-template-columns:1fr;grid-template-rows:30rem 1fr}h1{grid-area:1/1/2/2}#shopping-cart{border-spacing:0}tbody{margin:2rem}tbody tr{background-color:#b0b0b0;justify-content:center;align-items:center;text-align:center;border-bottom:solid black}tbody tr td div img{width:10vw;height:10vw;float:left}tbody tr td div{display:flex}
