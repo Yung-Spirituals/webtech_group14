@@ -5,6 +5,7 @@
       <product-filters />
     </div>
     <div class="products-view">
+      <!--   Creates a product card for each product in our product storage    -->
       <div
           v-for="product in products"
           :key="product.id"
@@ -25,10 +26,18 @@ import { useProductStore } from "@/stores/product";
 import ProductFilters from "@/components/ProductFilters.vue";
 import ProductCard from "@/components/ProductCard.vue";
 
+/**
+ * Directs the user correctly to the product they select
+ * @type {Router}
+ */
 const router = useRouter();
 function openProduct(id) {
   router.push(`/product/${id}`);
 }
+
+/**
+ * Gets all the products from storage
+ */
 const store = useProductStore();
 store.getProducts();
 const { products } = storeToRefs(store);

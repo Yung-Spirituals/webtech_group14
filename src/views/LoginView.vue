@@ -13,8 +13,7 @@
           <input id="password" type="password">
           <span class="label-text">Password</span>
         </label>
-      </div>
-      <input type="submit" value="Submit" id="submit">
+      </div><input type="submit" value="Submit" id="submit">
     </form>
     <app-button text="Log out" @click="logOut"></app-button>
     <p>Don't have an account?</p>
@@ -23,24 +22,25 @@
 </template>
 
 <script>
-import {sendAuthenticationRequest, doLogout, getAuthenticatedUser} from "../stores/authentication";
+import {sendAuthenticationRequest, doLogout, getCookie} from "../stores/authentication";
 import AppButton from "@/components/AppButton.vue";
 
+/**
+ * Sends an authentication request to the servers and sets the cookies to match user data. And redirects you to the front page
+ */
 function login() {
   console.log(document.getElementById("username").innerHTML)
   sendAuthenticationRequest(document.getElementById("username").value,
       document.getElementById("password").value);
-  if (getAuthenticatedUser() !== null){
-    this.$router.push({ name: 'login', query: { redirect: '/' } })
-  }
+  alert("Login Success!");
 }
 
+/**
+ * Clears the local cookies, effectively signing you out
+ */
 function logOut(){
   doLogout()
-}
-
-function signUp(){
-
+  alert("Successfully logged out")
 }
 
 export default {

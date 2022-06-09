@@ -6,11 +6,19 @@ export const useProductStore = defineStore({
     products: []
   }),
   actions: {
+    /**
+     * Updates the session storage with data from the backend.
+     * @returns {Promise<void>}
+     */
     async getProducts() {
       const response = await fetch("https://gr14.appdev.cloudns.ph/product/get-products");
       this.products = await response.json();
       console.log(this.products.toString());
     },
+    /**
+     * Requests to remove a product from the server
+     * @returns {Promise<void>}
+     */
     async removeProduct() {
       let id = parseInt(document.getElementById("id-input").innerText);
       const response = await fetch("https://gr14.appdev.cloudns.ph/product/delete-product/" + id, {
@@ -20,6 +28,10 @@ export const useProductStore = defineStore({
         }
       });
     },
+    /**
+     * Requests to update a product in the backend
+     * @returns {Promise<void>}
+     */
     async updateProduct() {
       let id = parseInt(document.getElementById("id-input").innerText);
       let name = document.getElementById("name-input").value;

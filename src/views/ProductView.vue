@@ -1,43 +1,12 @@
 <template>
   <div v-if="currentProduct" class="content">
-    <div class="productTitle">MAN / SWEATERS AND JACKETS / BANANA PEEL</div>
-    <div class="thumbnails">
-      <img
-        src="https://www.xxl.no/filespin/6ab6c901a97c4591804c2e655052208c?resize=722,722&quality=90&bgcolor=efefef"
-      />
-      <img
-        src="https://www.xxl.no/filespin/3eaaac41e7e241e6b40784c981940b62?resize=722,722&quality=90&bgcolor=efefef"
-      />
-      <img
-        src="https://www.xxl.no/filespin/20baf6aeefbe4306bb46c5e10bd87cb5?resize=722,722&quality=90&bgcolor=efefef"
-      />
-    </div>
     <div class="testimonial-image">
       <img :src="currentProduct.image_path" />
     </div>
     <div class="details">
-      <h1 class="productName">{{ currentProduct.name }}</h1>
-      <div class="price">{{ currentProduct.price }},-</div>
-      <div class="colorSize">
-        <div class="colors">
-          <div class="orangeSelect">
-            <span class="material-icons"> circle </span>
-          </div>
-          <div class="greenSelect">
-            <span class="material-icons"> circle </span>
-          </div>
-          <div class="purpleSelect">
-            <span class="material-icons"> circle </span>
-          </div>
-        </div>
-        <div class="sizes">
-          <div id="XS">XS</div>
-          <div id="S">S</div>
-          <div id="M">M</div>
-          <div id="L">L</div>
-          <div id="XL">XL</div>
-        </div>
-      </div>
+      <label class="productName">{{ currentProduct.name }}</label>
+      <div class="price">{{ currentProduct.price }} kr</div>
+
       <div class="shortInfo">
         <div class="shortInfoText">
           {{ currentProduct.description }}
@@ -50,10 +19,6 @@
             ADD TO CART</div>
         </div>
       </div>
-      <h2 class="detailedDescription">DESCRIPTION</h2>
-      <h2 class="productDetails">DETAILS</h2>
-      <h2 class="size-chart">SIZE CHART</h2>
-      <h2 class="material-specification">MATERIAL SPECIFICATION</h2>
     </div>
   </div>
 </template>
@@ -65,14 +30,19 @@ import { storeToRefs } from "pinia";
 import { computed } from "vue";
 import { useCartStore } from "@/stores/cart";
 
+/**
+ * uses states to keep track of what products we have received from the backend and which items we have in our cart.
+ */
 const cartStore = useCartStore();
-
 const route = useRoute();
-
 const productStore = useProductStore();
 const { products } = storeToRefs(productStore);
 productStore.getProducts();
 
+/**
+ * Fixes the pathing for each individual product
+ * @type {ComputedRef<*>}
+ */
 const currentProduct = computed(() => {
   return products.value.find((product) => {
     return product.id + "" === route.params.id;
@@ -88,44 +58,28 @@ const currentProduct = computed(() => {
 /*CSS FOR PRODUCT PAGE BELOW*/
 .content {
   display: grid;
-  grid-template-areas:
-    "title     title title"
-    "thumbnails image details";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 1fr 2.789fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
-.productTitle {
-  grid-area: title;
-  display: flex;
-  font-size: 1.5rem;
-  text-decoration: underline;
-  justify-content: left;
-  align-items: center;
-  margin-left: 1rem;
-}
-.thumbnails {
-  grid-area: thumbnails;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-}
+
 .thumbnails > img {
   width: 100%;
   margin-bottom: 2rem;
   border-radius: 2rem;
 }
 .testimonial-image {
-  grid-area: image;
+  grid-area: 0/0/1/1;
   margin-left: 2rem;
+  margin-top: 4rem;
 }
 .testimonial-image > img {
   width: 100%;
   border-radius: 2rem;
 }
 .details {
-  grid-area: details;
-  display: grid;
-  grid-template-rows: 1fr 0.3fr 0.7fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 3fr;
+  grid-area: 0/1/1/2;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   text-align: center;
@@ -140,73 +94,6 @@ const currentProduct = computed(() => {
   font-size: 1.4rem;
   font-weight: bold;
 }
-.colorSize {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  border-top: 0.1em #b0b0b0 solid;
-}
-.colors {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 1rem;
-}
-.orangeSelect {
-  color: orange;
-  cursor: pointer;
-}
-.orangeSelect:hover {
-  color: orange;
-  cursor: pointer;
-}
-.greenSelect {
-  color: green;
-  cursor: pointer;
-}
-.purpleSelect {
-  color: purple;
-  cursor: pointer;
-}
-.sizes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  gap: 0.8rem;
-}
-#XS {
-  cursor: pointer;
-}
-#XS:hover {
-  color: #55d6aa;
-}
-#S {
-  cursor: pointer;
-}
-#S:hover {
-  color: #55d6aa;
-}
-#M {
-  cursor: pointer;
-}
-#M:hover {
-  color: #55d6aa;
-}
-#L {
-  cursor: pointer;
-}
-#L:hover {
-  color: #55d6aa;
-}
-#XL {
-  cursor: pointer;
-}
-#XL:hover {
-  color: #55d6aa;
-}
 .shortInfo {
   display: flex;
   font-size: 1.4rem;
@@ -215,6 +102,7 @@ const currentProduct = computed(() => {
 }
 .shortInfoText {
   width: 75%;
+  height: 30rem;
 }
 .BuyOrFavorite {
   display: flex;
@@ -228,16 +116,17 @@ const currentProduct = computed(() => {
   margin-bottom: 2rem;
 }
 .BuyButton {
+  margin-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15rem;
-  height: 5rem;
+  width: 35rem;
+  height: 7rem;
   border: 0.2rem solid #55d6aa;
   border-radius: 3rem;
   background-color: #55d6aa;
   font-family: "Nunito", sans-serif;
-  font-size: 1.4rem;
+  font-size: 3rem;
   padding: 1rem 2rem;
   font-weight: 800;
   box-shadow: inset 0 0 0 0 #222222;
@@ -251,46 +140,18 @@ const currentProduct = computed(() => {
   -webkit-box-shadow: inset 15rem 0 0 0 #222222;
   cursor: pointer;
 }
-.FavoriteArea {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+.productName{
+  font-size: 13rem;
 }
-.Favorite {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
+.price{
+  font-size: 10rem;
+  color: #55d6aa;
 }
-.FavoriteArea:hover {
-  opacity: 50%;
-  cursor: pointer;
+.shortInfo{
+  background-color: #f6f6f6;
+  margin-top: 6rem;
 }
-.detailedDescription {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 0.1em #b0b0b0 solid;
-}
-.productDetails {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 0.1em #b0b0b0 solid;
-}
-.size-chart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 0.1em #b0b0b0 solid;
-}
-.material-specification {
-  border-top: 0.1em #b0b0b0 solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.shortInfoText{
+  font-size: 4rem;
 }
 </style>

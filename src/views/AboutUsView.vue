@@ -43,6 +43,9 @@ export default {
     AppButton
   },
 };
+/**
+ * Starts the animations that play when the page is loaded
+ */
 activate();
 </script>
 

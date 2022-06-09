@@ -54,12 +54,20 @@ const { carts } = storeToRefs(cartStore);
 import { useCartStore } from "@/stores/cart";
 const cartStore = useCartStore();
 
+/**
+ * Removes a product from the shopping cart
+ * @param id
+ */
 function removeFromCart(id){
   cartStore.removeProductFromCart(id)
 }
 
+/**
+ * Sends an order to the server and clears the cart.
+ */
 function checkOut(){
   cartStore.checkOut();
+  alert("Thank you for your purchase!")
 }
 
 export default {

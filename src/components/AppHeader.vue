@@ -29,6 +29,10 @@
 <script setup>
 import { useRouter } from "vue-router";
 
+/**
+ * Creates router links in the navigation to all the views linked in the index.js except the ones listed in the hidden routes constant.
+ * @type {Router}
+ */
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {

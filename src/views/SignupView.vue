@@ -24,6 +24,10 @@
 <script>
 import AppButton from "@/components/AppButton.vue";
 
+/**
+ * Sends a request to create a new user to the server.
+ * @returns {Promise<void>}
+ */
 async function signUp() {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
@@ -38,6 +42,7 @@ async function signUp() {
     },
     body: JSON.stringify(data)
   })
+  alert("User registered!")
 }
 
 export default {

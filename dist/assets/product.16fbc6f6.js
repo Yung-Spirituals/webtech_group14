@@ -1,1 +1,0 @@
-import{j as o}from"./index.c5eae7df.js";const r=o({id:"product",state:()=>({products:[]}),actions:{async getProducts(){const t=await fetch("https://gr14.appdev.cloudns.ph/product/get-products");this.products=await t.json(),console.log(this.products.toString())}}});export{r as u};

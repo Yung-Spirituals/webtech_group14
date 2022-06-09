@@ -8,6 +8,12 @@ export const useCartStore = defineStore({
         carts:[]
     }),
     actions: {
+        /**
+         * Adds a new product to the cart
+         * @param item
+         * @param quantity
+         * @returns {Promise<void>}
+         */
         async addProductToCart(item, quantity) {
             if (this.findIndexById(item.id) !== -1) {
                 await this.updateProductInCart(item.id, item, quantity);
@@ -22,6 +28,13 @@ export const useCartStore = defineStore({
                 await this.getCart();
             }
         },
+        /**
+         * updates the quantity of an item in the cart
+         * @param id
+         * @param item
+         * @param newQuantity
+         * @returns {Promise<void>}
+         */
         async updateProductInCart(id, item, newQuantity) {
             if (id === null && newQuantity === null) {
             } else {
@@ -38,6 +51,11 @@ export const useCartStore = defineStore({
             }
             await this.getCart();
         },
+        /**
+         * removes a singular product from the shopping cart
+         * @param id
+         * @returns {Promise<void>}
+         */
         async removeProductFromCart(id) {
             await fetch("https://gr14.appdev.cloudns.ph/cart/delete-cart/" + id, {
                 method: 'DELETE',
@@ -47,6 +65,11 @@ export const useCartStore = defineStore({
             });
             await this.getCart()
         },
+        /**
+         * Checks if the product is already in your cart and at what index it is.
+         * @param id
+         * @returns {number}
+         */
         findIndexById(id){
             if (this.carts.length < 0) {
                 return this.carts.findIndex((item) => item.id === id);
@@ -54,6 +77,10 @@ export const useCartStore = defineStore({
                 return -1;
             }
         },
+        /**
+         * Empties you shopping cart
+         * @returns {Promise<void>}
+         */
         async emptyCart() {
             this.carts = [];
             await fetch("https://gr14.appdev.cloudns.ph/cart/empty-cart", {
@@ -64,6 +91,10 @@ export const useCartStore = defineStore({
             })
             await this.getCart();
         },
+        /**
+         * Places an order with everything that was in your cart and clears your cart
+         * @returns {Promise<void>}
+         */
         async checkOut(){
             this.carts = [];
             const response = await fetch("https://gr14.appdev.cloudns.ph/order/new-order", {
@@ -74,6 +105,10 @@ export const useCartStore = defineStore({
             })
             await this.getCart();
         },
+        /**
+         * Requests all products in our shopping cart from the server and stores in a state
+         * @returns {Promise<void>}
+         */
         async getCart(){
             const response = await fetch("https://gr14.appdev.cloudns.ph/cart/get-cart", {
                 method: 'GET',

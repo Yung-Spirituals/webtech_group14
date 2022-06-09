@@ -44,11 +44,19 @@ import { storeToRefs } from "pinia";
 import { computed } from "vue";
 /*import CommentSection from "../components/CommentSection";*/
 
-const route = useRoute();
+/**
+ * Gets the product from the state storage
+ * @type {RouteLocationNormalizedLoaded}
+ */
 const store = useProductStore();
 const { products } = storeToRefs(store);
 store.getProducts();
 
+/**
+ * Fixes the pathing for each individual product
+ * @type {ComputedRef<*>}
+ */
+const route = useRoute();
 const currentProduct = computed(() => {
   return products.value.find((product) => {
     return product.id + "" === route.params.id;
@@ -60,9 +68,15 @@ const currentProduct = computed(() => {
 import { useProductStore } from "@/stores/product";
 const store = useProductStore();
 
+/**
+ * Calls for the state storage to request the server to delete the product
+ */
 function remove(){
   store.removeProduct();
 }
+/**
+ * Calls for the state storage to request the server to update the product using the data from the inputs
+ */
 function update(){
   store.updateProduct()
 }

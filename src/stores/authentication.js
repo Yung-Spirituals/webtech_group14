@@ -1,4 +1,3 @@
-// Heavily "inspired" by girts' GitHub repo
 // Will try to change later
 
 /**
@@ -140,6 +139,14 @@ export function getCookie(cname) {
     return "";
 }
 
+/**
+ * Sends a request to the server
+ * @param method
+ * @param url
+ * @param callback
+ * @param requestBody
+ * @param errorCallback
+ */
 export function sendApiRequest(method, url, callback, requestBody, errorCallback) {
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {

@@ -85,6 +85,9 @@ export default {
   methods:{
   }
 };
+/**
+ * Starts the animations that play when the page is loaded
+ */
 activate()
 </script>
 
