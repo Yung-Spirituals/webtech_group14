@@ -6,9 +6,9 @@ export const useProductStore = defineStore({
   }),
   actions: {
     async getProducts() {
-      const response = await fetch("https://gr14.appdev.cloudns.ph/api/get-products");
+      const response = await fetch("https://gr14.appdev.cloudns.ph/product/get-products");
       this.products = await response.json();
-      console.log(this.products.toString())
+      console.log(this.products.toString());
     }
   }
 })

@@ -31,7 +31,7 @@ function openProduct(id) {
 }
 const store = useProductStore();
 store.getProducts();
-const { products } = storeToRefs(store)
+const { products } = storeToRefs(store);
 </script>
 
 <style scoped>

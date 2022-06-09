@@ -32,7 +32,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const routes = router.getRoutes();
 const filteredRoutes = routes.filter((route) => {
-  const hiddenRoutes = ["product", "shopping-cart", "login", "construction"];
+  const hiddenRoutes = ["product", "shopping-cart", "login", "construction", "sign up"];
   return !hiddenRoutes.includes(route.name);
 });
 function goToShoppingCart() {

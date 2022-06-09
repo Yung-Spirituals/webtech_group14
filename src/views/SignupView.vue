@@ -1,9 +1,9 @@
-<!--Login page-->
+<!--Signup page-->
 <template>
-  <div id="login">
+  <div id="sign-up">
     <img src="@/assets/leeezard.png" alt="logo"/>
-    <form id="login-form" v-on:submit.prevent="login">
-      <h2>LOGIN</h2>
+    <form id="login-form" v-on:submit.prevent="signUp">
+      <h2>SIGN UP</h2>
       <div id="info">
         <label>
           <input id="username" type="text">
@@ -16,45 +16,41 @@
       </div>
       <input type="submit" value="Submit" id="submit">
     </form>
-    <app-button text="Log out" @click="logOut"></app-button>
-    <p>Don't have an account?</p>
-    <router-link to="sign-up"><p>Sign up</p></router-link>
+    <p>Already have an account?</p>
+    <router-link to="login"><p>Log in</p></router-link>
   </div>
 </template>
 
 <script>
-import {sendAuthenticationRequest, doLogout, getAuthenticatedUser} from "../stores/authentication";
 import AppButton from "@/components/AppButton.vue";
 
-function login() {
-  console.log(document.getElementById("username").innerHTML)
-  sendAuthenticationRequest(document.getElementById("username").value,
-      document.getElementById("password").value);
-  if (getAuthenticatedUser() !== null){
-    this.$router.push({ name: 'login', query: { redirect: '/' } })
+async function signUp() {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let data = {
+    "username": username,
+    "password": password
   }
-}
-
-function logOut(){
-  doLogout()
-}
-
-function signUp(){
-
+  const response = await fetch("https://gr14.appdev.cloudns.ph/authenticate/register", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
 }
 
 export default {
   components: {AppButton},
   methods: {
-    login,
-    logOut
+    signUp
   }
 }
 </script>
 
 
 <style scoped>
-#login{
+#sign-up{
   display: flex;
   width: 100%;
   align-items: center;

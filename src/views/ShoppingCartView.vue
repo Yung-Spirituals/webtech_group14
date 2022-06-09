@@ -1,7 +1,7 @@
 <template>
   <div id="content">
     <h1>Shopping Cart</h1>
-    <table>
+    <table id="shopping-cart">
       <thead>
       <tr>
         <th>Product</th>
@@ -16,49 +16,41 @@
         <!------- Product -------->
         <td>
           <div>
-            <img :src="cart.product.image_path" alt=""/>
+            <img :src="cart.product.image_path" />
             <label>{{ cart.product.name }}</label>
           </div>
         </td>
         <td>
-          {{ cart.product.price }}
+          {{ cart.product.price }} kr
         </td>
         <td>
-          <input type="number" :value="cart.quantity" />
+          <input class="quantity" type="number" :value="cart.quantity" />
         </td>
         <td>
-          {{cart.quantity * cart.product.price}}
+          <span class="sub-total"> {{cart.quantity * cart.product.price}} kr </span>
         </td>
         <td>
           <button class="delete-button" @click="removeFromCart(cart.product.id)">
-            <span class="material-symbols-rounded">Delete</span> <span>{{cart.product.price}}</span>
+            <span class="material-symbols-rounded">Delete</span>
           </button>
         </td>
       </tr>
       </tbody>
-      <tfoot>
-      <tr>
-      <td>
-        sum
-      </td>
-      <td>
-        99999$
-      </td>
-      </tr>
-      </tfoot>
     </table>
+    <AppButton text="Checkout" @click="checkOut"></AppButton>
   </div>
 </template>
 
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useCartStore } from "@/stores/cart";
+import AppButton from "@/components/AppButton.vue";
 const cartStore = useCartStore();
 cartStore.getCart();
 const { carts } = storeToRefs(cartStore);
 </script>
 
-<script>
+<script defer>
 import { useCartStore } from "@/stores/cart";
 const cartStore = useCartStore();
 
@@ -66,9 +58,14 @@ function removeFromCart(id){
   cartStore.removeProductFromCart(id)
 }
 
+function checkOut(){
+  cartStore.checkOut();
+}
+
 export default {
   methods: {
-    removeFromCart
+    removeFromCart,
+    checkOut
   }
 }
 </script>
@@ -83,7 +80,32 @@ h1{
   grid-area: 1/1/2/2;
 }
 
-.product-id{
-  display: none;
+#shopping-cart{
+  border-spacing: 0;
+}
+
+tbody{
+  margin: 2rem;
+}
+
+tbody tr{
+  background-color: #b0b0b0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: solid black;
+}
+
+tbody tr td div img{
+  width: 10vw;
+  height: 10vw;
+  float: left;
+}
+
+tbody tr td div{
+  display: flex;
+}
+
+app-button{
 }
 </style>

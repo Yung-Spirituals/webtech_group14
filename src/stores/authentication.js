@@ -41,7 +41,7 @@ export function sendAuthenticationRequest(username, password, successCallback, e
         "password": password
     };
     sendApiRequest(
-        "POST", "https://gr14.appdev.cloudns.ph/authenticate",
+        "POST", "https://gr14.appdev.cloudns.ph/authenticate/login",
         function (jwtResponse) {
             setCookie("jwt", jwtResponse.jwt);
             const userData = parseJwtUser(jwtResponse.jwt);
@@ -173,8 +173,4 @@ export function sendApiRequest(method, url, callback, requestBody, errorCallback
     } else {
         request.send();
     }
-}
-
-export function register(){
-    fetch("POST", "https://gr14.appdev.cloudns.ph/api/register", )
 }

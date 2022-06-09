@@ -2,9 +2,9 @@
 <template>
   <div class="product-card">
     <img :src=product.image_path />
-    <div id="product-content">
-      <h2 id="product-name">{{ product.name }}</h2>
-      <p id="price">{{ product.price }} {{ product.currency }}</p>
+    <div class="product-content">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="price">{{ product.price }} kr</p>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
 <style scoped>
 .product-card {
   display: grid;
-  grid-template-rows: 30rem 1fr;
+  grid-template-rows: 30rem 20rem;
   grid-template-columns: 30rem;
   overflow: hidden;
   cursor: pointer;
@@ -44,15 +44,15 @@ export default {
   transform: scale(1.03);
 }
 
-#product-content {
+.product-content {
   margin: 2rem;
   display: flex;
   flex-direction: column;
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 30rem;
+  height: 30rem;
   object-fit: cover;
 }
 </style>

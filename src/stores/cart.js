@@ -8,14 +8,14 @@ export const useCartStore = defineStore({
         carts:[]
     }),
     actions: {
-        async addProductToCart(item) {
+        async addProductToCart(item, quantity) {
             if (this.findIndexById(item.id) !== -1) {
-                await this.updateProductInCart(item.id, item, item.quantity + 1);
+                await this.updateProductInCart(item.id, item, quantity);
             } else {
-                const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + item.id + "/" + 1, {
-                    method: 'PUT',
+                const response = await fetch("https://gr14.appdev.cloudns.ph/cart/update-cart/" + item.id + "/" + 1, {
+                    method: 'POST',
                     headers: {
-                        'Authorization': 'bearer: ' + getCookie('jwt')
+                        'Authorization': 'Bearer ' + getCookie('jwt')
                     }
                 })
                 this.carts = await response.json();
@@ -27,10 +27,10 @@ export const useCartStore = defineStore({
             } else {
                 const index = this.findIndexById(id);
                 if (index !== -1) {
-                    const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + item.id + "/" + newQuantity, {
-                        method: 'PUT',
+                    const response = await fetch("https://gr14.appdev.cloudns.ph/cart/update-cart/" + item.id + "/" + newQuantity, {
+                        method: 'POST',
                         headers: {
-                            'Authorization': 'bearer: ' + getCookie('jwt')
+                            'Authorization': 'Bearer ' + getCookie('jwt')
                         }
                     })
                     this.carts = await response.json();
@@ -39,10 +39,10 @@ export const useCartStore = defineStore({
             await this.getCart();
         },
         async removeProductFromCart(id) {
-            await fetch("https://gr14.appdev.cloudns.ph/api/cart/" + id, {
+            await fetch("https://gr14.appdev.cloudns.ph/cart/delete-cart/" + id, {
                 method: 'DELETE',
                 headers: {
-                    'Authorization': 'bearer: ' + getCookie('jwt')
+                    'Authorization': 'Bearer ' + getCookie('jwt')
                 }
             });
             await this.getCart()
@@ -53,32 +53,32 @@ export const useCartStore = defineStore({
             } else {
                 return -1;
             }
-        }/*,
-        isInCart(item) {
-            if (this.carts === null){return false}
-            let inCart = false;
-            this.carts.forEach(value => function (){
-                if (value === item){
-                    inCart = true;
-                }
-            })
-            return inCart;
-        }*/,
+        },
         async emptyCart() {
             this.carts = [];
-            await fetch("https://gr14.appdev.cloudns.ph/api/cart", {
+            await fetch("https://gr14.appdev.cloudns.ph/cart/empty-cart", {
                 method: 'DELETE',
                 headers: {
-                    'Authorization': 'bearer: ' + getCookie('jwt')
+                    'Authorization': 'Bearer ' + getCookie('jwt')
+                }
+            })
+            await this.getCart();
+        },
+        async checkOut(){
+            this.carts = [];
+            const response = await fetch("https://gr14.appdev.cloudns.ph/order/new-order", {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + getCookie('jwt')
                 }
             })
             await this.getCart();
         },
         async getCart(){
-            const response = await fetch("https://gr14.appdev.cloudns.ph/api/cart", {
+            const response = await fetch("https://gr14.appdev.cloudns.ph/cart/get-cart", {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'bearer: ' + getCookie('jwt')
+                    'Authorization': 'Bearer ' + getCookie('jwt')
                 }
             })
             this.carts = await response.json();
