@@ -28,7 +28,7 @@
       <p>We sell only premium equipment from brands such as Bergans, North Face, Devold and Mammut. All
         our employees are hiking enthusiasts and we have tested all we sell in the shop. P.S. We have warm
         closes for dogs. Check out our products!</p>
-      <AppButton text="TO PRODUCTS" aria-labelledby="to products"/>
+      <router-link to="/products"><AppButton text="TO PRODUCTS" aria-labelledby="to products"/></router-link>
     </div>
   </section>
 </template>

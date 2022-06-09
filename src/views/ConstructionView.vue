@@ -1,5 +1,5 @@
 <template>
-<section id="construction-container">
+<section id="construction-container" role="complementary" aria-labelledby="Under construction">
   <img src="@/assets/construction.jpg" alt="Beaver building">
   <h2>Sorry, site is under construction...</h2>
 </section>

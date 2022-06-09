@@ -4,9 +4,9 @@
     <section class="hero-section" role="complementary" aria-labelledby="hero-section">
       <div id="hero-image-content" class="init-animation">
         <h1>SIZE DOESN'T MATTER</h1>
-        <AppButton text="TO SHOP" aria-labelledby="take me to shop"/>
+        <router-link to="/products"><AppButton text="TO SHOP" aria-labelledby="take me to shop"/></router-link>
       </div>
-      <img src="@/assets/hero-image.jpg" alt="Woman hiking" id="hero-image" />
+      <img src="@/assets/hero-image.jpg" alt="" id="hero-image" />
     </section>
     <section id="introduction" role="complementary" aria-label="small introduction about us">
       <div id="introduction-container" class="reveal scroll">
@@ -240,11 +240,6 @@ Scroll functionality for containers when screen shrinks
   }
 }
 
-@media screen and (max-width: 68em){
-
-}
-
-
 @media screen and (max-width: 55em){
   #partner-info{
     margin: 0 2rem;
@@ -255,9 +250,5 @@ Scroll functionality for containers when screen shrinks
     height: 12rem;
     margin: 1rem;
   }
-}
-
-@media screen and (max-width: 37.5em){
-
 }
 </style>
