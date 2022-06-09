@@ -21,6 +21,7 @@ npm install
 ```sh
 npm run dev
 ```
+this is how to run the front end
 
 ### Compile and Minify for Production
 
