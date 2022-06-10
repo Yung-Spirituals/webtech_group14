@@ -12,9 +12,9 @@
           class="product"
           @click="openProduct(product.id)"
       >
-<!--        <product-card :product=product />-->
+        <product-card :product=product />
       </div>
-      <product-card />
+<!--      <product-card />-->
     </div>
   </div>
 </template>

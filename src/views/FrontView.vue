@@ -39,17 +39,17 @@
     <section id="testimonials" class="reveal scroll" role="complementary" aria-labelledby="testimonials">
       <TestimonialCard
           id="testimonial-hiker"
-          imageURL="/src/assets/anton.jpg"
+          imageURL="https://gr14.appdev.cloudns.ph/images/anton.jpg"
           quote="Hiking is a good way to use weekends together with your family. XXS is our go-to place for the latest hiking gear."
           name="Anton Berg-Hansen" title="Avid hiker"/>
       <TestimonialCard
           id="testimonial-ceo"
-          imageURL="/src/assets/chuck.jpg"
+          imageURL="https://gr14.appdev.cloudns.ph/images/chuck.jpg"
           quote="We are a small IT company, full of geeks. I had difficulty getting the geeks out of their chairs. XXS suggested the latest water bottles as a Christmas gift for all employees. I was skeptical at first, but now I have difficulty getting them back indoors."
           name="Chuck Venstre" title="CEO of IT company"/>
       <TestimonialCard
           id="testimonial-dog"
-          imageURL="/src/assets/goodest-boy.jpg"
+          imageURL="https://gr14.appdev.cloudns.ph/images/goodest-boy.jpg"
           quote="Got a matching sweater for my human and myself. We are out in the mountains every Sunday since."
           name="Golden retriever" title="#1 Goodest boy"/>
     </section>
