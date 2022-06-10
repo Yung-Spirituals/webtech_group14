@@ -28,3 +28,5 @@ this is how to run the front end
 ```sh
 npm run build
 ```
+## nb
+you have to be logged in to add items to cart, and there must be items in your cart to view the shopping cart
